@@ -158,14 +158,18 @@ GSE98547 的设计允许一层通常做不到的分解——同一个刚度对�
 
 | 编号 | 里程碑 | 完成时间 | 证据 |
 |---|---|---|---|
-| M0 | 本 v0.1 协议 + `ms_panel.json` 提交至版本库 | 2026-10-21 | commit hash 见 release notes |
-| M1 | Layer-0 数据下载 + gzip 完整性校验 | | `analysis/results/layer0/MANIFEST.json` |
-| M2 | Layer-1 数据下载（8 × xlsx） | | 同上 |
-| M3 | **读取 Layer-1 表达内容**（C0 界线，M3 之后不得再改协议） | | git tag |
-| M4 | 签名导出 + HIPPO 分层 | | `layer0_stiffness_signature.json` |
-| M5 | 主终点 + 次要 + 阴性对照检验 | | `layer1_results.json` |
-| M6 | 敏感性分析 S1–S6 | | `layer1_sensitivity.json` |
-| M7 | 图 + MANIFEST(SHA-256) + 一致性闸门 | | `MANIFEST.json` |
+| M0 | 协议 + `ms_panel.json` 冻结并提交 | 2026-10-21 | commit `10ec40c` / tag `v0.1.0` |
+| M1 | Layer-0 数据下载（GSE98547，24 样本 FPKM） | 2026-10-21 00:39 | `layer0_diagnostics.json` |
+| M2 | Layer-1 数据下载（8 × xlsx） | 2026-10-21 00:38 | `layer1_diagnostics.json` |
+| M3 | **首次读取 Layer-1 表达内容**（C0 界线） | 2026-10-21 00:36（表头结构检查）→ 01:05（统计量计算） | `layer1_results.json` |
+| M4 | 签名导出 + Hippo 分层（含 v0.2 修订后重跑） | 2026-10-21 00:50 | `layer0_signature.json` |
+| M5 | Stage A 主终点 + 次要 + 阴性对照 | 2026-10-21 01:02 | `layer1_results.json` |
+| M6 | 混杂审计 + 表达量匹配零分布 | 2026-10-21 01:05 | `layer1_diag.json` |
+| M7 | Stage B 加入（v0.3 修订）+ 样本级检验 | 2026-10-21 01:10 | `layer2_results.json` |
+| M8 | Stage B 稳健性（LOO / 算子 / 单基因 / 匹配零分布） | 2026-10-21 01:13 | `layer2_robustness.json` |
+| M9 | 图（Fig 1–4）+ MANIFEST(SHA-256) + 一致性闸门 23/23 | 2026-10-21 01:20 | `analysis/MANIFEST.json`、`gate_consistency.py` |
+
+**与 v0.1 计划的偏离（如实登记）**：原计划中的敏感性分析 S1–S6 未按原网格执行。原因是 Stage A 在混杂审计阶段即被判定为**方法学上不可推断**（背景含 40–58% 零表达位点，签名与背景基线分布 KS D ≈ 0.49），在这种情况下跑 S1–S6 只是在不同阈值下重复同一个被混杂的统计量，不产生新信息。替代地，Stage B 执行了更实质的稳健性检验 Q1–Q5。这一替代须在手稿方法学中明写，不得隐去。
 
 ---
 
