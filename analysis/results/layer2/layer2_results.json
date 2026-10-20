@@ -1,0 +1,160 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "source": "GSE261676",
+  "results": {
+    "hippo_dependent_up": {
+      "endpoint_role": "B-primary",
+      "n_human_members": 18,
+      "n_mapped_present": 11,
+      "members_present": [
+        "Adap1",
+        "Ajuba",
+        "Amotl2",
+        "Cnn2",
+        "Ctgf",
+        "Cyr61",
+        "Emilin2",
+        "Mtfmt",
+        "Ppp2r2b",
+        "Smad7",
+        "Ube2ql1"
+      ],
+      "primary_saline_arm": {
+        "mean_score_SNI": 0.12244,
+        "mean_score_sham": -0.02401,
+        "difference": 0.14645,
+        "n_SNI": 4,
+        "n_sham": 4,
+        "p_exact_permutation": 0.8,
+        "n_permutations_enumerated": 70,
+        "welch_t": 0.3557,
+        "welch_p": 0.740201,
+        "q_BH_family_of_4": 0.8
+      },
+      "secondary_all_samples_drug_adjusted": {
+        "difference": 0.26302,
+        "p_permutation": 0.308369
+      },
+      "exploratory_drug_effect_within_SNI": {
+        "mean_DMI": 0.14057,
+        "mean_saline": 0.12244,
+        "difference": 0.01813,
+        "p_exact_permutation": 0.914286
+      },
+      "negative_control_size_expression_matched": {
+        "n_iterations": 2000,
+        "p_empirical": 0.681159,
+        "note": "random size- and expression-decile-matched gene sets; a non-significant value confirms the scoring pipeline alone does not produce apparent effects"
+      }
+    },
+    "hippo_dependent_down": {
+      "endpoint_role": "B-secondary-1",
+      "n_human_members": 41,
+      "n_mapped_present": 33,
+      "members_present": [
+        "Abca7",
+        "Abtb1",
+        "Accs",
+        "Acsf2",
+        "Acvrl1",
+        "Adhfe1",
+        "Akna",
+        "Ank2",
+        "Bhlhe40",
+        "Bmf",
+        "Camk2n1",
+        "Cdkn1a",
+        "Cfap44",
+        "Ddit4",
+        "Dhrs3",
+        "Dpp7",
+        "Ebf4",
+        "Eps8l2",
+        "Fam227a",
+        "Gin1",
+        "Gpnmb",
+        "Hfm1",
+        "Liph",
+        "Lrrc75b",
+        "Mapk11",
+        "Neil1",
+        "Nrg4",
+        "Pla2g6",
+        "Ppfia4",
+        "Rccd1",
+        "Rilp",
+        "Ssh3",
+        "Thbs3"
+      ],
+      "primary_saline_arm": {
+        "mean_score_SNI": 0.18446,
+        "mean_score_sham": -0.21225,
+        "difference": 0.39671,
+        "n_SNI": 4,
+        "n_sham": 4,
+        "p_exact_permutation": 0.028571,
+        "n_permutations_enumerated": 70,
+        "welch_t": 4.3235,
+        "welch_p": 0.010847,
+        "q_BH_family_of_4": 0.085713
+      },
+      "secondary_all_samples_drug_adjusted": {
+        "difference": 0.3837,
+        "p_permutation": 0.0004
+      },
+      "exploratory_drug_effect_within_SNI": {
+        "mean_DMI": 0.19924,
+        "mean_saline": 0.18446,
+        "difference": 0.01478,
+        "p_exact_permutation": 0.828571
+      },
+      "negative_control_size_expression_matched": {
+        "n_iterations": 2000,
+        "p_empirical": 0.086957,
+        "note": "random size- and expression-decile-matched gene sets; a non-significant value confirms the scoring pipeline alone does not produce apparent effects"
+      }
+    },
+    "hippo_independent_down": {
+      "endpoint_role": "exploratory",
+      "n_human_members": 7,
+      "n_mapped_present": 7,
+      "members_present": [
+        "Chac1",
+        "Crip2",
+        "Emp3",
+        "Junb",
+        "Nupr1",
+        "Tppp3",
+        "Tsc22d3"
+      ],
+      "primary_saline_arm": {
+        "mean_score_SNI": -0.0486,
+        "mean_score_sham": -0.92214,
+        "difference": 0.87354,
+        "n_SNI": 4,
+        "n_sham": 4,
+        "p_exact_permutation": 0.057143,
+        "n_permutations_enumerated": 70,
+        "welch_t": 3.977,
+        "welch_p": 0.007968,
+        "q_BH_family_of_4": 0.085714
+      },
+      "secondary_all_samples_drug_adjusted": {
+        "difference": 0.6792,
+        "p_permutation": 0.0046
+      },
+      "exploratory_drug_effect_within_SNI": {
+        "mean_DMI": 0.7278,
+        "mean_saline": -0.0486,
+        "difference": 0.77641,
+        "p_exact_permutation": 0.028571
+      },
+      "negative_control_size_expression_matched": {
+        "n_iterations": 2000,
+        "p_empirical": 0.023488,
+        "note": "random size- and expression-decile-matched gene sets; a non-significant value confirms the scoring pipeline alone does not produce apparent effects"
+      }
+    }
+  }
+}

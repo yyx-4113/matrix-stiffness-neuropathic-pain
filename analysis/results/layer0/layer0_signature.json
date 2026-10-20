@@ -1,0 +1,226 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "source": "GSE98547",
+  "transform": "log2(FPKM + 1)",
+  "n_samples": 24,
+  "signature_thresholds": {
+    "p": 0.05,
+    "abs_log2fc": 0.5,
+    "bh_used_for_calling": false
+  },
+  "counts": {
+    "stiffness_up": 20,
+    "stiffness_down": 61,
+    "hippo_class": {
+      "ns": 12146,
+      "hippo_dependent": 59,
+      "ambiguous": 8,
+      "hippo_independent": 7,
+      "reversed": 7
+    }
+  },
+  "set_sizes": {
+    "hippo_dependent_up": 18,
+    "hippo_dependent_down": 41,
+    "hippo_independent_up": 0,
+    "hippo_independent_down": 7,
+    "reversed_up": 1,
+    "reversed_down": 6,
+    "ambiguous_up": 1,
+    "ambiguous_down": 7
+  },
+  "lats_confirmation_fraction": {
+    "hippo_dependent": 0.7966101694915254,
+    "hippo_independent": 0.2857142857142857
+  },
+  "sets": {
+    "hippo_dependent_up": [
+      "ADAP1",
+      "AJUBA",
+      "AMOTL2",
+      "ANKRD1",
+      "AP1M2",
+      "CNN2",
+      "CTGF",
+      "CYR61",
+      "EMILIN2",
+      "GPRC5A",
+      "HIST1H4D",
+      "KRT18",
+      "KRT8",
+      "MTFMT",
+      "PPP2R2B",
+      "SMAD7",
+      "UBE2QL1",
+      "VIPR1"
+    ],
+    "hippo_dependent_down": [
+      "ABCA7",
+      "ABTB1",
+      "ACCS",
+      "ACSF2",
+      "ACVRL1",
+      "ADHFE1",
+      "AKNA",
+      "ANK2",
+      "BHLHE40",
+      "BMF",
+      "C1orf134",
+      "CAMK2N1",
+      "CCDC78",
+      "CDKN1A",
+      "CFAP44",
+      "DDIT4",
+      "DHRS12",
+      "DHRS3",
+      "DPP7",
+      "EBF4",
+      "EPS8L2",
+      "FAM227A",
+      "GIN1",
+      "GPNMB",
+      "HFM1",
+      "LIPH",
+      "LRRC75B",
+      "MAPK11",
+      "MAPK15",
+      "NEIL1",
+      "NOXA1",
+      "NRG4",
+      "PLA2G6",
+      "PPFIA4",
+      "RAB26",
+      "RCCD1",
+      "RILP",
+      "SSH3",
+      "TEX22",
+      "THBS3",
+      "TREX1"
+    ],
+    "hippo_independent_up": [],
+    "hippo_independent_down": [
+      "CHAC1",
+      "CRIP2",
+      "EMP3",
+      "JUNB",
+      "NUPR1",
+      "TPPP3",
+      "TSC22D3"
+    ],
+    "reversed_up": [
+      "TNFRSF12A"
+    ],
+    "reversed_down": [
+      "DDB2",
+      "ICA1",
+      "IGFBP5",
+      "INTU",
+      "JAM2",
+      "SEC31B"
+    ],
+    "ambiguous_up": [
+      "GDPD3"
+    ],
+    "ambiguous_down": [
+      "ASNS",
+      "H1F0",
+      "JADE2",
+      "KLHDC9",
+      "NRXN2",
+      "RP11-426L16.10",
+      "SYNGR4"
+    ]
+  },
+  "positive_control_canonical_targets": {
+    "CTGF": {
+      "present": true,
+      "delta_WT": 1.6405,
+      "p_WT": 9.494020156605193e-06,
+      "q_WT": 0.1160833844548117,
+      "delta_YTKO": -0.0114,
+      "ratio_YTKO_over_WT": 0.0069,
+      "call": "stiffness_up",
+      "hippo_class": "hippo_dependent"
+    },
+    "CYR61": {
+      "present": true,
+      "delta_WT": 0.9926,
+      "p_WT": 0.00021515794758759736,
+      "q_WT": 0.20838993892200858,
+      "delta_YTKO": -0.0839,
+      "ratio_YTKO_over_WT": 0.0846,
+      "call": "stiffness_up",
+      "hippo_class": "hippo_dependent"
+    },
+    "ANKRD1": {
+      "present": true,
+      "delta_WT": 1.4263,
+      "p_WT": 0.00504083835940962,
+      "q_WT": 0.22929210017893656,
+      "delta_YTKO": -0.0225,
+      "ratio_YTKO_over_WT": 0.0158,
+      "call": "stiffness_up",
+      "hippo_class": "hippo_dependent"
+    },
+    "AMOTL2": {
+      "present": true,
+      "delta_WT": 1.3845,
+      "p_WT": 0.004689325121173413,
+      "q_WT": 0.22929210017893656,
+      "delta_YTKO": -0.2748,
+      "ratio_YTKO_over_WT": 0.1985,
+      "call": "stiffness_up",
+      "hippo_class": "hippo_dependent"
+    },
+    "THBS1": {
+      "present": true,
+      "delta_WT": 0.1702,
+      "p_WT": 0.5228594090292605,
+      "q_WT": 0.7747215213524925,
+      "delta_YTKO": -0.0035,
+      "ratio_YTKO_over_WT": 0.0204,
+      "call": "ns",
+      "hippo_class": "ns"
+    },
+    "AXL": {
+      "present": false
+    },
+    "CRIM1": {
+      "present": true,
+      "delta_WT": 0.4484,
+      "p_WT": 0.06716863561068143,
+      "q_WT": 0.38540423421391196,
+      "delta_YTKO": -0.3598,
+      "ratio_YTKO_over_WT": 0.8023,
+      "call": "ns",
+      "hippo_class": "ns"
+    },
+    "NUAK2": {
+      "present": false
+    },
+    "_summary": {
+      "n_present": 6,
+      "n_present_and_upregulated": 6,
+      "pass": true
+    }
+  },
+  "canonical_yap_taz_targets_sensitivity_S4": [
+    "CTGF",
+    "CYR61",
+    "ANKRD1",
+    "AMOTL2",
+    "THBS1",
+    "AXL",
+    "CRIM1",
+    "NUAK2"
+  ],
+  "canonical_targets_present_after_filter": [
+    "CTGF",
+    "CYR61",
+    "ANKRD1",
+    "AMOTL2",
+    "THBS1",
+    "CRIM1"
+  ]
+}

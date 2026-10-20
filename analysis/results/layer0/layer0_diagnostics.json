@@ -1,0 +1,133 @@
+{
+  "input_symbols": 58266,
+  "biotype_filter_note": "gencode.v24lift37.annotation.gtf.gz; keep gene_type in ['protein_coding']",
+  "symbols_before_biotype": 58266,
+  "symbols_passing_biotype": 19947,
+  "detection_rule": "FPKM > 1.0 in >= 6/24 samples",
+  "genes_passing": 12227,
+  "genes_dropped": 46039,
+  "per_file_rows_vs_symbols": {
+    "WT_1kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "WT_1kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "WT_1kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "WT_40kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "WT_40kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "WT_40kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_1kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_1kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_1kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_40kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_40kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "RAP2KO_40kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_1kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_1kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_1kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_40kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_40kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "LATSKO_40kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_1kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_1kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_1kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_40kPa_Rep1": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_40kPa_Rep2": {
+      "rows": 60350,
+      "symbols": 58266
+    },
+    "YTKO_40kPa_Rep3": {
+      "rows": 60350,
+      "symbols": 58266
+    }
+  },
+  "files": [
+    "GSM2598480_WT_1kPa_Rep1.txt.gz",
+    "GSM2598481_WT_1kPa_Rep2.txt.gz",
+    "GSM2598482_WT_1kPa_Rep3.txt.gz",
+    "GSM2598483_WT_40kPa_Rep1.txt.gz",
+    "GSM2598484_WT_40kPa_Rep2.txt.gz",
+    "GSM2598485_WT_40kPa_Rep3.txt.gz",
+    "GSM2598486_RAP2KO_1kPa_Rep1.txt.gz",
+    "GSM2598487_RAP2KO_1kPa_Rep2.txt.gz",
+    "GSM2598488_RAP2KO_1kPa_Rep3.txt.gz",
+    "GSM2598489_RAP2KO_40kPa_Rep1.txt.gz",
+    "GSM2598490_RAP2KO_40kPa_Rep2.txt.gz",
+    "GSM2598491_RAP2KO_40kPa_Rep3.txt.gz",
+    "GSM2598492_LATS1_2dKO_1kPa_Rep1.txt.gz",
+    "GSM2598493_LATS1_2dKO_1kPa_Rep2.txt.gz",
+    "GSM2598494_LATS1_2dKO_1kPa_Rep3.txt.gz",
+    "GSM2598495_LATS1_2dKO_40kPa_Rep1.txt.gz",
+    "GSM2598496_LATS1_2dKO_40kPa_Rep2.txt.gz",
+    "GSM2598497_LATS1_2dKO_40kPa_Rep3.txt.gz",
+    "GSM2598498_Y_TdKO_1kPa_Rep1.txt.gz",
+    "GSM2598499_Y_TdKO_1kPa_Rep2.txt.gz",
+    "GSM2598500_Y_TdKO_1kPa_Rep3.txt.gz",
+    "GSM2598501_Y_TdKO_40kPa_Rep1.txt.gz",
+    "GSM2598502_Y_TdKO_40kPa_Rep2.txt.gz",
+    "GSM2598503_Y_TdKO_40kPa_Rep3.txt.gz"
+  ]
+}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this protocol or the derived statistics, please cite it as below."
+title: "Matrix stiffness x neuropathic pain: prospectively specified reanalysis of GSE98547, GSE111216 and GSE261676"
+abstract: >-
+  A prospectively specified reanalysis testing whether the matrix-stiffness-responsive,
+  YAP/TAZ-dependent transcriptional programme is activated in dorsal root ganglion and
+  spinal cord after nerve injury or inflammation. The primary hypothesis is not supported:
+  no module survives expression-matched nulls or BH correction, and a bounded
+  sample-level observation in the opposite direction is reported with its limits.
+authors:
+  - family-names: Yang
+    given-names: Yongxin
+    orcid: "https://orcid.org/0009-0004-9698-6552"
+    affiliation: "The Second Affiliated Hospital of Fujian University of Traditional Chinese Medicine, Fuzhou, Fujian 350003, China"
+version: 0.1.0
+date-released: "2026-10-21"
+keywords:
+  - matrix stiffness
+  - mechanotransduction
+  - YAP/TAZ
+  - dorsal root ganglion
+  - neuropathic pain
+  - reproducibility
+identifiers:
+  - type: other
+    value: "GSE98547; GSE111216; GSE261676"
+license: MIT

@@ -1,0 +1,350 @@
+{
+  "per_contrast": {
+    "BLD_CFA": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 58.458,
+      "spearman_log2fc_vs_baseline": -0.10162,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.50504,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 0.5995,
+      "baseline_median_background": 0.0
+    },
+    "BLD_SNI": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 58.478,
+      "spearman_log2fc_vs_baseline": -0.10504,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.50536,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 0.6929,
+      "baseline_median_background": 0.0
+    },
+    "BRN_CFA": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 40.462,
+      "spearman_log2fc_vs_baseline": 0.05268,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.49041,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 4.8858,
+      "baseline_median_background": 0.0806
+    },
+    "BRN_SNI": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 40.46,
+      "spearman_log2fc_vs_baseline": 0.00781,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.49041,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 4.927,
+      "baseline_median_background": 0.0813
+    },
+    "DRG_CFA": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 42.772,
+      "spearman_log2fc_vs_baseline": -0.06011,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.49015,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 5.2039,
+      "baseline_median_background": 0.0352
+    },
+    "DRG_SNI": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 42.77,
+      "spearman_log2fc_vs_baseline": -0.12337,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.49019,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 5.2177,
+      "baseline_median_background": 0.0353
+    },
+    "SC_CFA": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 40.953,
+      "spearman_log2fc_vs_baseline": -0.05818,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.48844,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 6.075,
+      "baseline_median_background": 0.056
+    },
+    "SC_SNI": {
+      "n_genes": 46876,
+      "pct_baseline_zero": 40.948,
+      "spearman_log2fc_vs_baseline": -0.07991,
+      "n_signature_members_present": 78,
+      "signature_vs_background_baseline_KS_D": 0.48842,
+      "signature_vs_background_baseline_KS_p": 0.0,
+      "baseline_median_signature": 6.0121,
+      "baseline_median_background": 0.0555
+    }
+  },
+  "stratified_vs_unstratified": [
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "BLD",
+      "model": "CFA",
+      "n_present": 34,
+      "n_background_expressed": 19473,
+      "MRU_stratified_space": 0.48423,
+      "p_unstratified": 0.847815,
+      "p_expression_matched": 0.871413,
+      "q_expression_matched": 0.871413
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "BLD",
+      "model": "SNI",
+      "n_present": 34,
+      "n_background_expressed": 19464,
+      "MRU_stratified_space": 0.55993,
+      "p_unstratified": 0.476852,
+      "p_expression_matched": 0.509349,
+      "q_expression_matched": 0.5821131428571429
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "BRN",
+      "model": "CFA",
+      "n_present": 38,
+      "n_background_expressed": 27909,
+      "MRU_stratified_space": 0.3576,
+      "p_unstratified": 0.065693,
+      "p_expression_matched": 0.086691,
+      "q_expression_matched": 0.11972133333333333
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "BRN",
+      "model": "SNI",
+      "n_present": 38,
+      "n_background_expressed": 27910,
+      "MRU_stratified_space": 0.64614,
+      "p_unstratified": 0.059494,
+      "p_expression_matched": 0.065993,
+      "q_expression_matched": 0.11972133333333333
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "DRG",
+      "model": "CFA",
+      "n_present": 38,
+      "n_background_expressed": 26826,
+      "MRU_stratified_space": 0.29484,
+      "p_unstratified": 0.006299,
+      "p_expression_matched": 0.013399,
+      "q_expression_matched": 0.107192
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "DRG",
+      "model": "SNI",
+      "n_present": 38,
+      "n_background_expressed": 26827,
+      "MRU_stratified_space": 0.32155,
+      "p_unstratified": 0.020198,
+      "p_expression_matched": 0.048295,
+      "q_expression_matched": 0.11972133333333333
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "SC",
+      "model": "CFA",
+      "n_present": 38,
+      "n_background_expressed": 27679,
+      "MRU_stratified_space": 0.66865,
+      "p_unstratified": 0.027797,
+      "p_expression_matched": 0.057294,
+      "q_expression_matched": 0.11972133333333333
+    },
+    {
+      "signature": "hippo_dependent_down",
+      "tissue": "SC",
+      "model": "SNI",
+      "n_present": 38,
+      "n_background_expressed": 27681,
+      "MRU_stratified_space": 0.35533,
+      "p_unstratified": 0.061594,
+      "p_expression_matched": 0.089791,
+      "q_expression_matched": 0.11972133333333333
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "BLD",
+      "model": "CFA",
+      "n_present": 16,
+      "n_background_expressed": 19473,
+      "MRU_stratified_space": 0.5008,
+      "p_unstratified": 0.9952,
+      "p_expression_matched": 0.994201,
+      "q_expression_matched": 0.994201
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "BLD",
+      "model": "SNI",
+      "n_present": 16,
+      "n_background_expressed": 19464,
+      "MRU_stratified_space": 0.6964,
+      "p_unstratified": 0.090191,
+      "p_expression_matched": 0.111389,
+      "q_expression_matched": 0.445556
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "BRN",
+      "model": "CFA",
+      "n_present": 18,
+      "n_background_expressed": 27909,
+      "MRU_stratified_space": 0.58023,
+      "p_unstratified": 0.481552,
+      "p_expression_matched": 0.49585,
+      "q_expression_matched": 0.8868822857142857
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "BRN",
+      "model": "SNI",
+      "n_present": 18,
+      "n_background_expressed": 27910,
+      "MRU_stratified_space": 0.44899,
+      "p_unstratified": 0.653835,
+      "p_expression_matched": 0.656534,
+      "q_expression_matched": 0.8868822857142857
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "DRG",
+      "model": "CFA",
+      "n_present": 17,
+      "n_background_expressed": 26826,
+      "MRU_stratified_space": 0.46136,
+      "p_unstratified": 0.749525,
+      "p_expression_matched": 0.776022,
+      "q_expression_matched": 0.8868822857142857
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "DRG",
+      "model": "SNI",
+      "n_present": 17,
+      "n_background_expressed": 26827,
+      "MRU_stratified_space": 0.71677,
+      "p_unstratified": 0.057194,
+      "p_expression_matched": 0.105589,
+      "q_expression_matched": 0.445556
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "SC",
+      "model": "CFA",
+      "n_present": 17,
+      "n_background_expressed": 27679,
+      "MRU_stratified_space": 0.55886,
+      "p_unstratified": 0.618938,
+      "p_expression_matched": 0.677632,
+      "q_expression_matched": 0.8868822857142857
+    },
+    {
+      "signature": "hippo_dependent_up",
+      "tissue": "SC",
+      "model": "SNI",
+      "n_present": 17,
+      "n_background_expressed": 27681,
+      "MRU_stratified_space": 0.38537,
+      "p_unstratified": 0.330467,
+      "p_expression_matched": 0.368463,
+      "q_expression_matched": 0.8868822857142857
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "BLD",
+      "model": "CFA",
+      "n_present": 7,
+      "n_background_expressed": 19473,
+      "MRU_stratified_space": 0.29535,
+      "p_unstratified": 0.238176,
+      "p_expression_matched": 0.287971,
+      "q_expression_matched": 0.3291097142857143
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "BLD",
+      "model": "SNI",
+      "n_present": 7,
+      "n_background_expressed": 19464,
+      "MRU_stratified_space": 0.72389,
+      "p_unstratified": 0.19638,
+      "p_expression_matched": 0.224278,
+      "q_expression_matched": 0.3291097142857143
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "BRN",
+      "model": "CFA",
+      "n_present": 7,
+      "n_background_expressed": 27909,
+      "MRU_stratified_space": 0.5659,
+      "p_unstratified": 0.716628,
+      "p_expression_matched": 0.738826,
+      "q_expression_matched": 0.738826
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "BRN",
+      "model": "SNI",
+      "n_present": 7,
+      "n_background_expressed": 27910,
+      "MRU_stratified_space": 0.68799,
+      "p_unstratified": 0.285571,
+      "p_expression_matched": 0.278072,
+      "q_expression_matched": 0.3291097142857143
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "DRG",
+      "model": "CFA",
+      "n_present": 7,
+      "n_background_expressed": 26826,
+      "MRU_stratified_space": 0.29495,
+      "p_unstratified": 0.238476,
+      "p_expression_matched": 0.271573,
+      "q_expression_matched": 0.3291097142857143
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "DRG",
+      "model": "SNI",
+      "n_present": 7,
+      "n_background_expressed": 26827,
+      "MRU_stratified_space": 0.21755,
+      "p_unstratified": 0.085491,
+      "p_expression_matched": 0.136486,
+      "q_expression_matched": 0.3291097142857143
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "SC",
+      "model": "CFA",
+      "n_present": 7,
+      "n_background_expressed": 27679,
+      "MRU_stratified_space": 0.89927,
+      "p_unstratified": 0.005799,
+      "p_expression_matched": 0.008199,
+      "q_expression_matched": 0.065592
+    },
+    {
+      "signature": "hippo_independent_down",
+      "tissue": "SC",
+      "model": "SNI",
+      "n_present": 7,
+      "n_background_expressed": 27681,
+      "MRU_stratified_space": 0.76861,
+      "p_unstratified": 0.110689,
+      "p_expression_matched": 0.119388,
+      "q_expression_matched": 0.3291097142857143
+    }
+  ]
+}

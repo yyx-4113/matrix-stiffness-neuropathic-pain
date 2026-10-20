@@ -1,0 +1,145 @@
+{
+  "n_members_present": 33,
+  "members": [
+    "Abca7",
+    "Abtb1",
+    "Accs",
+    "Acsf2",
+    "Acvrl1",
+    "Adhfe1",
+    "Akna",
+    "Ank2",
+    "Bhlhe40",
+    "Bmf",
+    "Camk2n1",
+    "Cdkn1a",
+    "Cfap44",
+    "Ddit4",
+    "Dhrs3",
+    "Dpp7",
+    "Ebf4",
+    "Eps8l2",
+    "Fam227a",
+    "Gin1",
+    "Gpnmb",
+    "Hfm1",
+    "Liph",
+    "Lrrc75b",
+    "Mapk11",
+    "Neil1",
+    "Nrg4",
+    "Pla2g6",
+    "Ppfia4",
+    "Rccd1",
+    "Rilp",
+    "Ssh3",
+    "Thbs3"
+  ],
+  "Q1_leave_one_out": [
+    {
+      "dropped": "saline_SNI4",
+      "difference": 0.41778,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_SNI3",
+      "difference": 0.39377,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_SNI1",
+      "difference": 0.4141,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_SNI2",
+      "difference": 0.3612,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_sham1",
+      "difference": 0.31693,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_sham2",
+      "difference": 0.41217,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_sham3",
+      "difference": 0.44528,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    },
+    {
+      "dropped": "saline_sham4",
+      "difference": 0.41247,
+      "p_exact": 0.028571,
+      "n_splits": 35,
+      "direction_preserved": true
+    }
+  ],
+  "Q2_scoring_operators": {
+    "mean_z": {
+      "difference": 0.39671,
+      "p_exact": 0.028571,
+      "welch_p": 0.010847,
+      "direction_preserved": true
+    },
+    "median_z": {
+      "difference": 0.49269,
+      "p_exact": 0.028571,
+      "welch_p": 0.027273,
+      "direction_preserved": true
+    },
+    "rank_based": {
+      "difference": 0.10985,
+      "p_exact": 0.028571,
+      "welch_p": 0.007601,
+      "direction_preserved": true
+    },
+    "trimean_z": {
+      "difference": 0.49287,
+      "p_exact": 0.028571,
+      "welch_p": 0.017218,
+      "direction_preserved": true
+    }
+  },
+  "Q3_single_gene_dominance": {
+    "baseline_difference": 0.39671,
+    "weakest_member": "Liph",
+    "difference_without_weakest": 0.34617,
+    "p_exact_without_weakest": 0.028571,
+    "strongest_member": "Hfm1",
+    "difference_without_strongest": 0.45931,
+    "range_of_leave_one_out_differences": [
+      0.34617,
+      0.45931
+    ],
+    "direction_preserved_in_all_drops": true
+  },
+  "Q4_matched_null": {
+    "n_iterations": 10000,
+    "n_as_extreme": 952,
+    "p_empirical": 0.09529
+  },
+  "Q5_nonparametric": {
+    "mann_whitney_U": 16.0,
+    "p_mann_whitney": 0.02857142857142857,
+    "note": "4 vs 4 gives a minimum attainable two-sided p of 0.029 for any rank test"
+  }
+}

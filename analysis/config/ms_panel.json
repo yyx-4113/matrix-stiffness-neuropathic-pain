@@ -1,0 +1,145 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_note": "FROZEN before any Layer-1 expression data were examined. Any change requires a changelog entry in PROTOCOL and a version bump.",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+
+  "layer0": {
+    "accession": "GSE98547",
+    "organism": "Homo sapiens",
+    "design": "genotype x matrix stiffness x replicate",
+    "factor_stiffness": {
+      "soft_kPa": 1,
+      "stiff_kPa": 40
+    },
+    "genotypes": {
+      "WT": "wild type",
+      "RAP2KO": "RAP2A/B/C-tKO",
+      "LATSKO": "LATS1/2-dKO",
+      "YTKO": "YAP/TAZ-dKO"
+    },
+    "n_replicates": 3,
+    "transform": "log2(FPKM + 1)",
+    "detection_filter": {
+      "min_fpkm": 1.0,
+      "min_samples": 6,
+      "of_total": 24
+    },
+    "biotype_filter": {
+      "_added_v0_2": "R2 - non-coding loci (snoRNA/pseudogene/vault RNA) reached significance through low variance at n=3 and polluted the signature",
+      "annotation": "gencode.v24lift37.annotation.gtf.gz",
+      "annotation_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_24/GRCh37_mapping/gencode.v24lift37.annotation.gtf.gz",
+      "key": "gene_id with version stripped",
+      "keep_gene_type": ["protein_coding"]
+    },
+    "signature_definition": {
+      "test": "Welch two-sample t-test (stiff vs soft, within genotype)",
+      "p_threshold": 0.05,
+      "abs_log2fc_threshold": 0.5,
+      "bh_corrected": false,
+      "direction_sets": ["stiffness_up", "stiffness_down"]
+    },
+    "hippo_stratification": {
+      "_revised_v0_2": "R1 - sign-concordance requirement wrongly exiled genes whose response was COMPLETELY abolished by YAP/TAZ knockout (CTGF/CYR61/ANKRD1/AMOTL2 landed in ambiguous)",
+      "metric": "delta = mean(log2FPKM+1, stiff) - mean(log2FPKM+1, soft); r = |delta_knockout| / |delta_WT|",
+      "hippo_dependent": {
+        "max_ratio_abs": 0.5,
+        "require_same_sign": false,
+        "rule": "r <= 0.5 (sign irrelevant: a fully abolished response has no informative sign)"
+      },
+      "hippo_independent": {
+        "require_same_sign": true,
+        "min_ratio_abs": 0.8,
+        "rule": "r >= 0.8 AND same sign"
+      },
+      "reversed": {
+        "rule": "opposite sign AND r > 0.5",
+        "used_in_primary_endpoint": false
+      },
+      "otherwise": "ambiguous - excluded from primary endpoint",
+      "secondary_confirmation_genotype": "LATSKO"
+    },
+    "canonical_yap_taz_targets": [
+      "CTGF", "CYR61", "ANKRD1", "AMOTL2",
+      "THBS1", "AXL", "CRIM1", "NUAK2"
+    ],
+    "_canonical_note": "Minimal canonical set used only for sensitivity analysis S4. Curated from established YAP/TAZ direct-target reports; frozen a priori."
+  },
+
+  "layer1": {
+    "accession": "GSE111216",
+    "organism": "Mus musculus",
+    "strain": "BALB/c",
+    "tissues": ["DRG", "SC", "BRN", "BLD"],
+    "models": ["CFA", "SNI"],
+    "n_per_group": 3,
+    "endpoint_level": {
+      "primary": [
+        {"tissue": "DRG", "model": "SNI", "signature": "HD_up"}
+      ],
+      "secondary": [
+        {"tissue": "DRG", "model": "CFA", "signature": "HD_up"},
+        {"tissue": "SC", "model": "SNI", "signature": "HD_up"},
+        {"tissue": "SC", "model": "CFA", "signature": "HD_up"},
+        {"tissue": "DRG", "model": "SNI", "signature": "HD_down"},
+        {"tissue": "DRG", "model": "CFA", "signature": "HD_down"},
+        {"tissue": "SC", "model": "SNI", "signature": "HD_down"},
+        {"tissue": "SC", "model": "CFA", "signature": "HD_down"}
+      ],
+      "negative_control": [
+        {"tissue": "BLD", "model": "CFA", "signature": "HD_up"},
+        {"tissue": "BLD", "model": "SNI", "signature": "HD_up"},
+        {"tissue": "BLD", "model": "CFA", "signature": "HD_down"},
+        {"tissue": "BLD", "model": "SNI", "signature": "HD_down"},
+        {"tissue": "BRN", "model": "CFA", "signature": "HD_up"},
+        {"tissue": "BRN", "model": "SNI", "signature": "HD_up"},
+        {"tissue": "BRN", "model": "CFA", "signature": "HD_down"},
+        {"tissue": "BRN", "model": "SNI", "signature": "HD_down"}
+      ],
+      "exploratory": [
+        "all HI signature projections",
+        "RAP2KO- and LATSKO-defined sub-signatures",
+        "gene-level per-signature-member statistics"
+      ]
+    },
+    "species_mapping": {
+      "direction": "human -> mouse symbol",
+      "rule": "capitalize-only when symbol is all-uppercase and matches an entry in the mouse table; otherwise leave unchanged",
+      "ambiguity_policy": "drop conflicting symbols into _UNMAPPED list; no guess-assignment",
+      "min_acceptable_mapping_rate": 0.7,
+      "downgrade_if_below": "primary endpoint becomes exploratory"
+    },
+    "rank_test": {
+      "primary_ranking_variable": "log2_fc",
+      "alternative_ranking_variable": "log2_fcZ",
+      "statistic": ["Wilcoxon rank-sum z", "median_rank_difference_normalised (MRU)"],
+      "permutation": {
+        "n_iterations": 10000,
+        "scheme": "size-matched random gene subsample",
+        "seed": 20261021,
+        "sidedness": "two-sided",
+        "p_formula": "(count(|perm| >= |obs|) + 1) / (n_iterations + 1)"
+      },
+      "multiplicity": {
+        "method": "Benjamini-Hochberg",
+        "family": "16 base tests (4 tissues x 2 models x 2 directions) per signature family"
+      }
+    },
+    "overlap_test": {
+      "method": "Fisher exact test on 2x2 table (signature membership x author DEG)",
+      "author_deg_thresholds": [0.05, 0.01]
+    },
+    "floor_limited": {
+      "rule": "both group mean expression values <= 1",
+      "action": "flagged in gene-level table; retained in module rank test; removed in sensitivity S2"
+    }
+  },
+
+  "sensitivity_analyses": {
+    "S1": "signature thresholds |delta| >= 1.0 and P < 0.01",
+    "S2": "drop floor-limited genes",
+    "S3": "rank by log2_fcZ instead of log2_fc",
+    "S4": "canonical YAP/TAZ 8-gene minimal signature",
+    "S5": "include ambiguous members in HD set",
+    "S6": "alternative permutation seeds (3 additional)"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "tables": {
+    "BRN_CFA": {
+      "file": "GSE111216_Parisien_Suppl_Table_01_gene_BRN_CTRvsCFA.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 858,
+      "author_deg_p01": 341,
+      "median_log2fc": 0.0
+    },
+    "BRN_SNI": {
+      "file": "GSE111216_Parisien_Suppl_Table_02_gene_BRN_CTRvsSNI.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 686,
+      "author_deg_p01": 282,
+      "median_log2fc": 0.0
+    },
+    "SC_CFA": {
+      "file": "GSE111216_Parisien_Suppl_Table_03_gene_SC_CTRvsCFA.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 2247,
+      "author_deg_p01": 1207,
+      "median_log2fc": 0.0
+    },
+    "SC_SNI": {
+      "file": "GSE111216_Parisien_Suppl_Table_04_gene_SC_CTRvsSNI.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 872,
+      "author_deg_p01": 444,
+      "median_log2fc": 0.0
+    },
+    "DRG_CFA": {
+      "file": "GSE111216_Parisien_Suppl_Table_05_gene_DRG_CTRvsCFA.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 1127,
+      "author_deg_p01": 629,
+      "median_log2fc": 0.0
+    },
+    "DRG_SNI": {
+      "file": "GSE111216_Parisien_Suppl_Table_06_gene_DRG_CTRvsSNI.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 2973,
+      "author_deg_p01": 1711,
+      "median_log2fc": 0.0
+    },
+    "BLD_CFA": {
+      "file": "GSE111216_Parisien_Suppl_Table_07_gene_BLD_CTRvsCFA.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 640,
+      "author_deg_p01": 268,
+      "median_log2fc": 0.0
+    },
+    "BLD_SNI": {
+      "file": "GSE111216_Parisien_Suppl_Table_08_gene_BLD_CTRvsSNI.xlsx",
+      "rows": 46975,
+      "rows_with_ranking_statistic": 46876,
+      "duplicate_symbols_dropped": 99,
+      "author_deg_p05": 442,
+      "author_deg_p01": 145,
+      "median_log2fc": 0.0
+    }
+  },
+  "mapping": {
+    "hippo_dependent_up": {
+      "n_human": 18,
+      "n_matched_in_DRG_SNI_example": 18,
+      "unmatched": []
+    },
+    "hippo_dependent_down": {
+      "n_human": 41,
+      "n_matched_in_DRG_SNI_example": 39,
+      "unmatched": [
+        "C1orf134",
+        "Dhrs12"
+      ]
+    },
+    "hippo_independent_up": {
+      "n_human": 0,
+      "n_matched_in_DRG_SNI_example": 0,
+      "unmatched": []
+    },
+    "hippo_independent_down": {
+      "n_human": 7,
+      "n_matched_in_DRG_SNI_example": 7,
+      "unmatched": []
+    },
+    "reversed_up": {
+      "n_human": 1,
+      "n_matched_in_DRG_SNI_example": 1,
+      "unmatched": []
+    },
+    "reversed_down": {
+      "n_human": 6,
+      "n_matched_in_DRG_SNI_example": 6,
+      "unmatched": []
+    },
+    "ambiguous_up": {
+      "n_human": 1,
+      "n_matched_in_DRG_SNI_example": 1,
+      "unmatched": []
+    },
+    "ambiguous_down": {
+      "n_human": 7,
+      "n_matched_in_DRG_SNI_example": 6,
+      "unmatched": [
+        "Rp11-426l16.10"
+      ]
+    }
+  }
+}

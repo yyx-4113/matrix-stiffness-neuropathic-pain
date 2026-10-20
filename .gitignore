@@ -1,0 +1,23 @@
+# Raw / large inputs (re-downloadable from GEO and EBI)
+analysis/data/raw/_gse98547/
+analysis/data/raw/_gse261676/
+analysis/data/raw/_annotation/
+analysis/data/raw/*.tar
+analysis/data/raw/*.gz
+analysis/data/raw/*.xlsx
+analysis/data/raw/*.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Release archives (regenerated, not tracked)
+release_*.zip
