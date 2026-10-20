@@ -52,6 +52,45 @@ def ranks_of(df, var):
     return pd.Series(arr, index=df.index)
 
 
+def _without_replacement(n_perm, m, n, rng, block=2000, max_retry=25):
+    """n_perm index rows, each holding m DISTINCT indices drawn from [0, n).
+
+    m << n here, so rejection sampling is far cheaper than permuting the whole
+    background: a collision occurs in only a few percent of rows.
+    """
+    idx = rng.integers(0, n, size=(n_perm, m))
+    for _ in range(max_retry):
+        dup = np.array([np.unique(r).size < m for r in idx])
+        if not dup.any():
+            break
+        idx[dup] = rng.integers(0, n, size=(int(dup.sum()), m))
+    return idx
+
+
+def _stratified_draws(rk, member_bins, pool_by_bin, n_perm, rng, max_retry=25):
+    """Draw a distinct gene per member, each from that member's expression decile.
+
+    rk is a pandas Series indexed by gene symbol, so pool entries are SYMBOLS and
+    must be looked up with .loc -- indexing the underlying numpy value array with
+    symbol strings raises IndexError.
+    """
+    out = np.empty((n_perm, len(member_bins)), dtype=float)
+    for _ in range(max_retry):
+        rows_ok = np.ones(n_perm, dtype=bool)
+        picks = []
+        for b in member_bins:
+            pool = pool_by_bin[b]
+            pick = pool[rng.integers(0, len(pool), n_perm)]
+            for prev in picks:
+                rows_ok &= ~(pick == prev)      # collision in this permutation row
+            picks.append(pick)
+        for j, pick in enumerate(picks):
+            out[:, j] = rk.loc[pick].to_numpy()
+        if rows_ok.all():
+            return out
+    return out
+
+
 def main():
     cfg = json.load(open(CFG, encoding="utf-8"))
     sig = json.load(open(os.path.join(L0, "layer0_signature.json"), encoding="utf-8"))
@@ -145,14 +184,13 @@ def main():
             # stratified null: for each member draw a gene from the same decile
             member_bins = dfe.loc[members, "bin"].to_numpy()
             pool_by_bin = {b: dfe.index[dfe["bin"] == b].to_numpy() for b in range(10)}
-            draws = np.empty((n_perm, len(members)))
-            for j, b in enumerate(member_bins):
-                pool = pool_by_bin[b]
-                draws[:, j] = rk.loc[pool[rng.integers(0, len(pool), n_perm)]].to_numpy()
+            draws = _stratified_draws(rk, member_bins, pool_by_bin, n_perm, rng)
             perm = np.median(draws, axis=1)
             p_strat = (int((np.abs(perm - 0.5) >= abs(obs - 0.5)).sum()) + 1) / (n_perm + 1)
-            # unstratified null for comparison
-            idx = rng.integers(0, ne, size=(n_perm, len(members)))
+            # unstratified null for comparison, sampled WITHOUT replacement too
+            # (v0.4 R6) so that the stratified/unstratified contrast reflects
+            # expression matching alone and not a difference in sampling scheme.
+            idx = _without_replacement(n_perm, len(members), ne, rng)
             perm2 = np.median(rk.to_numpy()[idx], axis=1)
             p_un = (int((np.abs(perm2 - 0.5) >= abs(obs - 0.5)).sum()) + 1) / (n_perm + 1)
             rows.append({

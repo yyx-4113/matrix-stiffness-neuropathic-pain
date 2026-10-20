@@ -89,9 +89,9 @@
       "n_present": 34,
       "n_background_expressed": 19473,
       "MRU_stratified_space": 0.48423,
-      "p_unstratified": 0.847815,
-      "p_expression_matched": 0.871413,
-      "q_expression_matched": 0.871413
+      "p_unstratified": 0.846515,
+      "p_expression_matched": 0.869713,
+      "q_expression_matched": 0.869713
     },
     {
       "signature": "hippo_dependent_down",
@@ -100,9 +100,9 @@
       "n_present": 34,
       "n_background_expressed": 19464,
       "MRU_stratified_space": 0.55993,
-      "p_unstratified": 0.476852,
-      "p_expression_matched": 0.509349,
-      "q_expression_matched": 0.5821131428571429
+      "p_unstratified": 0.470753,
+      "p_expression_matched": 0.506949,
+      "q_expression_matched": 0.5793702857142857
     },
     {
       "signature": "hippo_dependent_down",
@@ -111,9 +111,9 @@
       "n_present": 38,
       "n_background_expressed": 27909,
       "MRU_stratified_space": 0.3576,
-      "p_unstratified": 0.065693,
-      "p_expression_matched": 0.086691,
-      "q_expression_matched": 0.11972133333333333
+      "p_unstratified": 0.063994,
+      "p_expression_matched": 0.092691,
+      "q_expression_matched": 0.12358799999999999
     },
     {
       "signature": "hippo_dependent_down",
@@ -122,9 +122,9 @@
       "n_present": 38,
       "n_background_expressed": 27910,
       "MRU_stratified_space": 0.64614,
-      "p_unstratified": 0.059494,
+      "p_unstratified": 0.058994,
       "p_expression_matched": 0.065993,
-      "q_expression_matched": 0.11972133333333333
+      "q_expression_matched": 0.12358799999999999
     },
     {
       "signature": "hippo_dependent_down",
@@ -133,9 +133,9 @@
       "n_present": 38,
       "n_background_expressed": 26826,
       "MRU_stratified_space": 0.29484,
-      "p_unstratified": 0.006299,
-      "p_expression_matched": 0.013399,
-      "q_expression_matched": 0.107192
+      "p_unstratified": 0.007299,
+      "p_expression_matched": 0.009899,
+      "q_expression_matched": 0.079192
     },
     {
       "signature": "hippo_dependent_down",
@@ -144,9 +144,9 @@
       "n_present": 38,
       "n_background_expressed": 26827,
       "MRU_stratified_space": 0.32155,
-      "p_unstratified": 0.020198,
-      "p_expression_matched": 0.048295,
-      "q_expression_matched": 0.11972133333333333
+      "p_unstratified": 0.022998,
+      "p_expression_matched": 0.053695,
+      "q_expression_matched": 0.12358799999999999
     },
     {
       "signature": "hippo_dependent_down",
@@ -155,9 +155,9 @@
       "n_present": 38,
       "n_background_expressed": 27679,
       "MRU_stratified_space": 0.66865,
-      "p_unstratified": 0.027797,
-      "p_expression_matched": 0.057294,
-      "q_expression_matched": 0.11972133333333333
+      "p_unstratified": 0.029997,
+      "p_expression_matched": 0.054895,
+      "q_expression_matched": 0.12358799999999999
     },
     {
       "signature": "hippo_dependent_down",
@@ -166,9 +166,9 @@
       "n_present": 38,
       "n_background_expressed": 27681,
       "MRU_stratified_space": 0.35533,
-      "p_unstratified": 0.061594,
-      "p_expression_matched": 0.089791,
-      "q_expression_matched": 0.11972133333333333
+      "p_unstratified": 0.062194,
+      "p_expression_matched": 0.085791,
+      "q_expression_matched": 0.12358799999999999
     },
     {
       "signature": "hippo_dependent_up",
@@ -177,9 +177,9 @@
       "n_present": 16,
       "n_background_expressed": 19473,
       "MRU_stratified_space": 0.5008,
-      "p_unstratified": 0.9952,
-      "p_expression_matched": 0.994201,
-      "q_expression_matched": 0.994201
+      "p_unstratified": 0.994001,
+      "p_expression_matched": 0.9952,
+      "q_expression_matched": 0.9952
     },
     {
       "signature": "hippo_dependent_up",
@@ -188,9 +188,9 @@
       "n_present": 16,
       "n_background_expressed": 19464,
       "MRU_stratified_space": 0.6964,
-      "p_unstratified": 0.090191,
-      "p_expression_matched": 0.111389,
-      "q_expression_matched": 0.445556
+      "p_unstratified": 0.085491,
+      "p_expression_matched": 0.10039,
+      "q_expression_matched": 0.40916
     },
     {
       "signature": "hippo_dependent_up",
@@ -199,9 +199,9 @@
       "n_present": 18,
       "n_background_expressed": 27909,
       "MRU_stratified_space": 0.58023,
-      "p_unstratified": 0.481552,
-      "p_expression_matched": 0.49585,
-      "q_expression_matched": 0.8868822857142857
+      "p_unstratified": 0.472353,
+      "p_expression_matched": 0.49505,
+      "q_expression_matched": 0.8811691428571429
     },
     {
       "signature": "hippo_dependent_up",
@@ -210,9 +210,9 @@
       "n_present": 18,
       "n_background_expressed": 27910,
       "MRU_stratified_space": 0.44899,
-      "p_unstratified": 0.653835,
-      "p_expression_matched": 0.656534,
-      "q_expression_matched": 0.8868822857142857
+      "p_unstratified": 0.647935,
+      "p_expression_matched": 0.666533,
+      "q_expression_matched": 0.8811691428571429
     },
     {
       "signature": "hippo_dependent_up",
@@ -221,9 +221,9 @@
       "n_present": 17,
       "n_background_expressed": 26826,
       "MRU_stratified_space": 0.46136,
-      "p_unstratified": 0.749525,
-      "p_expression_matched": 0.776022,
-      "q_expression_matched": 0.8868822857142857
+      "p_unstratified": 0.741926,
+      "p_expression_matched": 0.771023,
+      "q_expression_matched": 0.8811691428571429
     },
     {
       "signature": "hippo_dependent_up",
@@ -232,9 +232,9 @@
       "n_present": 17,
       "n_background_expressed": 26827,
       "MRU_stratified_space": 0.71677,
-      "p_unstratified": 0.057194,
-      "p_expression_matched": 0.105589,
-      "q_expression_matched": 0.445556
+      "p_unstratified": 0.055394,
+      "p_expression_matched": 0.10229,
+      "q_expression_matched": 0.40916
     },
     {
       "signature": "hippo_dependent_up",
@@ -243,9 +243,9 @@
       "n_present": 17,
       "n_background_expressed": 27679,
       "MRU_stratified_space": 0.55886,
-      "p_unstratified": 0.618938,
-      "p_expression_matched": 0.677632,
-      "q_expression_matched": 0.8868822857142857
+      "p_unstratified": 0.615238,
+      "p_expression_matched": 0.675732,
+      "q_expression_matched": 0.8811691428571429
     },
     {
       "signature": "hippo_dependent_up",
@@ -254,9 +254,9 @@
       "n_present": 17,
       "n_background_expressed": 27681,
       "MRU_stratified_space": 0.38537,
-      "p_unstratified": 0.330467,
-      "p_expression_matched": 0.368463,
-      "q_expression_matched": 0.8868822857142857
+      "p_unstratified": 0.329967,
+      "p_expression_matched": 0.361664,
+      "q_expression_matched": 0.8811691428571429
     },
     {
       "signature": "hippo_independent_down",
@@ -265,9 +265,9 @@
       "n_present": 7,
       "n_background_expressed": 19473,
       "MRU_stratified_space": 0.29535,
-      "p_unstratified": 0.238176,
-      "p_expression_matched": 0.287971,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.249075,
+      "p_expression_matched": 0.282372,
+      "q_expression_matched": 0.32271085714285713
     },
     {
       "signature": "hippo_independent_down",
@@ -276,9 +276,9 @@
       "n_present": 7,
       "n_background_expressed": 19464,
       "MRU_stratified_space": 0.72389,
-      "p_unstratified": 0.19638,
-      "p_expression_matched": 0.224278,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.194281,
+      "p_expression_matched": 0.225577,
+      "q_expression_matched": 0.32271085714285713
     },
     {
       "signature": "hippo_independent_down",
@@ -287,9 +287,9 @@
       "n_present": 7,
       "n_background_expressed": 27909,
       "MRU_stratified_space": 0.5659,
-      "p_unstratified": 0.716628,
-      "p_expression_matched": 0.738826,
-      "q_expression_matched": 0.738826
+      "p_unstratified": 0.727727,
+      "p_expression_matched": 0.742526,
+      "q_expression_matched": 0.742526
     },
     {
       "signature": "hippo_independent_down",
@@ -298,9 +298,9 @@
       "n_present": 7,
       "n_background_expressed": 27910,
       "MRU_stratified_space": 0.68799,
-      "p_unstratified": 0.285571,
-      "p_expression_matched": 0.278072,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.281672,
+      "p_expression_matched": 0.273373,
+      "q_expression_matched": 0.32271085714285713
     },
     {
       "signature": "hippo_independent_down",
@@ -309,9 +309,9 @@
       "n_present": 7,
       "n_background_expressed": 26826,
       "MRU_stratified_space": 0.29495,
-      "p_unstratified": 0.238476,
-      "p_expression_matched": 0.271573,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.242676,
+      "p_expression_matched": 0.267273,
+      "q_expression_matched": 0.32271085714285713
     },
     {
       "signature": "hippo_independent_down",
@@ -320,9 +320,9 @@
       "n_present": 7,
       "n_background_expressed": 26827,
       "MRU_stratified_space": 0.21755,
-      "p_unstratified": 0.085491,
-      "p_expression_matched": 0.136486,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.088891,
+      "p_expression_matched": 0.142486,
+      "q_expression_matched": 0.32271085714285713
     },
     {
       "signature": "hippo_independent_down",
@@ -331,9 +331,9 @@
       "n_present": 7,
       "n_background_expressed": 27679,
       "MRU_stratified_space": 0.89927,
-      "p_unstratified": 0.005799,
-      "p_expression_matched": 0.008199,
-      "q_expression_matched": 0.065592
+      "p_unstratified": 0.0046,
+      "p_expression_matched": 0.007899,
+      "q_expression_matched": 0.063192
     },
     {
       "signature": "hippo_independent_down",
@@ -342,9 +342,9 @@
       "n_present": 7,
       "n_background_expressed": 27681,
       "MRU_stratified_space": 0.76861,
-      "p_unstratified": 0.110689,
-      "p_expression_matched": 0.119388,
-      "q_expression_matched": 0.3291097142857143
+      "p_unstratified": 0.111289,
+      "p_expression_matched": 0.117188,
+      "q_expression_matched": 0.32271085714285713
     }
   ]
 }

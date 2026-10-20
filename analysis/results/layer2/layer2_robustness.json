@@ -134,8 +134,8 @@
   },
   "Q4_matched_null": {
     "n_iterations": 10000,
-    "n_as_extreme": 952,
-    "p_empirical": 0.09529
+    "n_as_extreme": 920,
+    "p_empirical": 0.092091
   },
   "Q5_nonparametric": {
     "mann_whitney_U": 16.0,

@@ -1,0 +1,33 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
+  "verdict": {
+    "n_claims_checked": 19,
+    "n_missing_from_documents": 0,
+    "missing": [],
+    "positive_control_integrity": {
+      "gene_set_declared_in_frozen_config": true,
+      "n_genes": 12,
+      "genes": [
+        "ATF3",
+        "SPRR1A",
+        "GAL",
+        "NPY",
+        "SOX11",
+        "GAP43",
+        "NGFR",
+        "VGF",
+        "STMN4",
+        "BASP1",
+        "MMP9",
+        "TIMP1"
+      ],
+      "overlap_with_this_project_signature": [],
+      "overlap_count": 0,
+      "selection_basis_declared": "Regeneration-associated genes (RAGs) and nerve-injury markers consistently reported as up-regulated in DRG neurons after peripheral nerve injury (SNI / axotomy). Selected from the literature ONLY - never from any expression result of this project, which would be circular.",
+      "scored_by_same_code_path": true,
+      "circularity_verdict": "CLEAN - no gene in the positive control also appears in this project's stiffness signature",
+      "controls_failed_to_be_scored": []
+    }
+  }
+}

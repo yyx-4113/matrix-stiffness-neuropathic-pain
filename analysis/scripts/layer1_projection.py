@@ -56,6 +56,34 @@ def human_to_mouse(sym):
     return sym
 
 
+def _perm_median_rank(rank_vals, n_perm, m, rng, block=2000, max_retry=25):
+    """Median rank of WITHOUT-replacement size-m random gene sets.
+
+    Because m << n here (m ~ 7-41 against n ~ 1.5e4 background genes), an
+    exact without-replacement draw is well approximated by rejection sampling:
+    draw m indices and redraw only the rare rows that contain a duplicate
+    (collision probability ~3.6% at m=33). This keeps the cost at O(n_perm * m)
+    instead of O(n_perm * n), which is what made a full-permutation pass over
+    all signature x contrast pairs intractable.
+    """
+    n = len(rank_vals)
+    out = np.empty(n_perm, dtype=float)
+    start = 0
+    while start < n_perm:
+        stop = min(start + block, n_perm)
+        k = stop - start
+        idx = rng.integers(0, n, size=(k, m))
+        for _ in range(max_retry):
+            nuniq = np.array([np.unique(row).size for row in idx])
+            dup = nuniq < m
+            if not dup.any():
+                break
+            idx[dup] = rng.integers(0, n, size=(int(dup.sum()), m))
+        out[start:stop] = np.median(rank_vals[idx], axis=1)
+        start = stop
+    return out
+
+
 def load_table(path):
     """Read one deposited per-contrast xlsx into a DataFrame indexed by gene."""
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
@@ -171,17 +199,23 @@ def main():
 
             n = len(df)
             m = len(present)
-            # Wilcoxon rank-sum z (Mann-Whitney U standardised)
+            # Wilcoxon rank-sum z (Mann-Whitney U standardised).
+            # v0.4 R5 (audit finding A4): ranks here are 0-based (0 .. n-1), so the
+            # null expectation of the rank sum is m*(n-1)/2, NOT m*(n+1)/2. The
+            # previous 1-based mean biased every z downward by m/sd. The variance
+            # is translation-invariant and unchanged.
             U = member_ranks.sum()
-            mu = m * (n + 1) / 2.0
+            mu = m * (n - 1) / 2.0
             sd = np.sqrt(m * (n - m) * (n + 1) / 12.0)
             z = (U - mu) / sd
             # normalised median-rank difference (MRU): 0.5 = no shift
             mru = float(np.median(member_ranks) / (n - 1))
-            # permutation null: size-matched random gene sets
-            idx = rng.integers(0, n, size=(n_perm, m))
+            # permutation null: size-matched random gene sets, WITHOUT
+            # replacement (v0.4 R6 / audit finding A5). Sampling with replacement
+            # duplicates genes, shrinking the effective module size and widening the
+            # null; measured duplicate rate was 3.35% of draws.
             rank_vals = ranks.to_numpy()
-            perm_mru = np.median(rank_vals[idx], axis=1) / (n - 1)
+            perm_mru = _perm_median_rank(rank_vals, n_perm, m, rng) / (n - 1)
             obs_shift = mru - 0.5
             perm_shift = perm_mru - 0.5
             n_extreme = int((np.abs(perm_shift) >= abs(obs_shift)).sum())

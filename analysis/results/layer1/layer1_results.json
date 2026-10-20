@@ -1,6 +1,6 @@
 {
   "_tag": "ms-proto-frozen-2026-10-21",
-  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
   "source": "GSE111216",
   "ranking_variable": "log2_fc",
   "permutation": {
@@ -23,8 +23,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 40348.0,
       "MRU": 0.860757,
-      "wilcoxon_z": 1.4712,
-      "p_permutation": 0.016298,
+      "wilcoxon_z": 1.4714,
+      "p_permutation": 0.019698,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -70,8 +70,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 9100.0,
       "MRU": 0.194133,
-      "wilcoxon_z": -1.8219,
-      "p_permutation": 0.055794,
+      "wilcoxon_z": -1.8217,
+      "p_permutation": 0.055694,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -117,8 +117,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 27136.5,
       "MRU": 0.578912,
-      "wilcoxon_z": 0.5767,
-      "p_permutation": 0.651835,
+      "wilcoxon_z": 0.5769,
+      "p_permutation": 0.648235,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -164,8 +164,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 10928.0,
       "MRU": 0.233131,
-      "wilcoxon_z": -1.6387,
-      "p_permutation": 0.106289,
+      "wilcoxon_z": -1.6385,
+      "p_permutation": 0.10469,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -211,8 +211,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 22903.0,
       "MRU": 0.488597,
-      "wilcoxon_z": -0.1034,
-      "p_permutation": 0.947705,
+      "wilcoxon_z": -0.1032,
+      "p_permutation": 0.948105,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -258,8 +258,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 8031.5,
       "MRU": 0.171339,
-      "wilcoxon_z": -2.071,
-      "p_permutation": 0.033697,
+      "wilcoxon_z": -2.0708,
+      "p_permutation": 0.035996,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -305,8 +305,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 23590.5,
       "MRU": 0.503264,
-      "wilcoxon_z": 0.093,
-      "p_permutation": 0.986601,
+      "wilcoxon_z": 0.0931,
+      "p_permutation": 0.985201,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -352,8 +352,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 23346.5,
       "MRU": 0.498059,
-      "wilcoxon_z": -0.3624,
-      "p_permutation": 0.990601,
+      "wilcoxon_z": -0.3622,
+      "p_permutation": 0.991301,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -400,7 +400,7 @@
       "median_rank_of_members": 4833.0,
       "MRU": 0.103104,
       "wilcoxon_z": -1.3749,
-      "p_permutation": 0.207179,
+      "p_permutation": 0.206479,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -441,8 +441,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 3291.0,
       "MRU": 0.070208,
-      "wilcoxon_z": -1.4889,
-      "p_permutation": 0.147885,
+      "wilcoxon_z": -1.4888,
+      "p_permutation": 0.142386,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -484,7 +484,7 @@
       "median_rank_of_members": 41081.0,
       "MRU": 0.876395,
       "wilcoxon_z": 1.3038,
-      "p_permutation": 0.242176,
+      "p_permutation": 0.245175,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -525,8 +525,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 36405.0,
       "MRU": 0.77664,
-      "wilcoxon_z": 0.9582,
-      "p_permutation": 0.442356,
+      "wilcoxon_z": 0.9583,
+      "p_permutation": 0.439856,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -567,8 +567,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 39175.0,
       "MRU": 0.835733,
-      "wilcoxon_z": 1.1629,
-      "p_permutation": 0.330367,
+      "wilcoxon_z": 1.163,
+      "p_permutation": 0.325267,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -609,8 +609,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 44538.0,
       "MRU": 0.950144,
-      "wilcoxon_z": 1.5592,
-      "p_permutation": 0.09649,
+      "wilcoxon_z": 1.5593,
+      "p_permutation": 0.09909,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -651,8 +651,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 46128.0,
       "MRU": 0.984064,
-      "wilcoxon_z": 1.6767,
-      "p_permutation": 0.028897,
+      "wilcoxon_z": 1.6768,
+      "p_permutation": 0.033397,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -693,8 +693,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 45772.0,
       "MRU": 0.976469,
-      "wilcoxon_z": 1.6504,
-      "p_permutation": 0.046295,
+      "wilcoxon_z": 1.6505,
+      "p_permutation": 0.048595,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -735,8 +735,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 5751.0,
       "MRU": 0.122688,
-      "wilcoxon_z": -2.8226,
-      "p_permutation": 0.011999,
+      "wilcoxon_z": -2.8224,
+      "p_permutation": 0.012199,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -766,7 +766,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.032396
+      "q_BH": 0.033996
     },
     {
       "signature": "hippo_independent_down",
@@ -783,8 +783,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 40598.0,
       "MRU": 0.866091,
-      "wilcoxon_z": 0.4843,
-      "p_permutation": 0.016198,
+      "wilcoxon_z": 0.4845,
+      "p_permutation": 0.016998,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -814,7 +814,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.032396
+      "q_BH": 0.033996
     },
     {
       "signature": "hippo_independent_down",
@@ -831,8 +831,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 32922.0,
       "MRU": 0.702336,
-      "wilcoxon_z": 0.5862,
-      "p_permutation": 0.247375,
+      "wilcoxon_z": 0.5864,
+      "p_permutation": 0.247675,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -862,7 +862,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.247375
+      "q_BH": 0.247675
     },
     {
       "signature": "hippo_independent_down",
@@ -879,8 +879,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 37257.0,
       "MRU": 0.794816,
-      "wilcoxon_z": 2.1256,
-      "p_permutation": 0.072093,
+      "wilcoxon_z": 2.1258,
+      "p_permutation": 0.073193,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -910,7 +910,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.082392
+      "q_BH": 0.083649
     },
     {
       "signature": "hippo_independent_down",
@@ -927,8 +927,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 7912.0,
       "MRU": 0.168789,
-      "wilcoxon_z": -2.3739,
-      "p_permutation": 0.036096,
+      "wilcoxon_z": -2.3737,
+      "p_permutation": 0.036296,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -958,7 +958,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.048128
+      "q_BH": 0.048395
     },
     {
       "signature": "hippo_independent_down",
@@ -975,8 +975,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 5836.0,
       "MRU": 0.124501,
-      "wilcoxon_z": -0.5236,
-      "p_permutation": 0.012399,
+      "wilcoxon_z": -0.5234,
+      "p_permutation": 0.014199,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1006,7 +1006,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.032396
+      "q_BH": 0.033996
     },
     {
       "signature": "hippo_independent_down",
@@ -1023,8 +1023,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 43816.0,
       "MRU": 0.934741,
-      "wilcoxon_z": 1.7983,
-      "p_permutation": 0.0007,
+      "wilcoxon_z": 1.7985,
+      "p_permutation": 0.0012,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1054,7 +1054,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.0056
+      "q_BH": 0.0096
     },
     {
       "signature": "hippo_independent_down",
@@ -1071,8 +1071,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 39871.0,
       "MRU": 0.850581,
-      "wilcoxon_z": 0.6993,
-      "p_permutation": 0.022998,
+      "wilcoxon_z": 0.6995,
+      "p_permutation": 0.024998,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1102,7 +1102,7 @@
         "Tppp3",
         "Tsc22d3"
       ],
-      "q_BH": 0.036797
+      "q_BH": 0.039997
     },
     {
       "signature": "reversed_down",
@@ -1119,8 +1119,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 23745.5,
       "MRU": 0.506571,
-      "wilcoxon_z": 0.0529,
-      "p_permutation": 0.969003,
+      "wilcoxon_z": 0.0531,
+      "p_permutation": 0.971003,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1166,8 +1166,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 40420.5,
       "MRU": 0.862304,
-      "wilcoxon_z": 1.218,
-      "p_permutation": 0.016298,
+      "wilcoxon_z": 1.2182,
+      "p_permutation": 0.014199,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1213,8 +1213,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 7957.5,
       "MRU": 0.16976,
-      "wilcoxon_z": -1.8319,
-      "p_permutation": 0.031997,
+      "wilcoxon_z": -1.8318,
+      "p_permutation": 0.034697,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1260,8 +1260,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 8987.0,
       "MRU": 0.191723,
-      "wilcoxon_z": -1.7832,
-      "p_permutation": 0.052995,
+      "wilcoxon_z": -1.783,
+      "p_permutation": 0.052495,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1307,8 +1307,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 6909.5,
       "MRU": 0.147403,
-      "wilcoxon_z": -2.1846,
-      "p_permutation": 0.020998,
+      "wilcoxon_z": -2.1845,
+      "p_permutation": 0.021398,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1354,8 +1354,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 10270.0,
       "MRU": 0.219093,
-      "wilcoxon_z": -2.0783,
-      "p_permutation": 0.082092,
+      "wilcoxon_z": -2.0781,
+      "p_permutation": 0.084092,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1401,8 +1401,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 6272.0,
       "MRU": 0.133803,
-      "wilcoxon_z": -2.3128,
-      "p_permutation": 0.012199,
+      "wilcoxon_z": -2.3127,
+      "p_permutation": 0.016098,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1448,8 +1448,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 23716.0,
       "MRU": 0.505941,
-      "wilcoxon_z": -0.1112,
-      "p_permutation": 0.971603,
+      "wilcoxon_z": -0.111,
+      "p_permutation": 0.973403,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1495,8 +1495,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 6959.0,
       "MRU": 0.148459,
-      "wilcoxon_z": -1.2178,
-      "p_permutation": 0.30497,
+      "wilcoxon_z": -1.2177,
+      "p_permutation": 0.29547,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1537,8 +1537,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 43714.0,
       "MRU": 0.932565,
-      "wilcoxon_z": 1.4983,
-      "p_permutation": 0.135786,
+      "wilcoxon_z": 1.4984,
+      "p_permutation": 0.138386,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1580,7 +1580,7 @@
       "median_rank_of_members": 46043.0,
       "MRU": 0.982251,
       "wilcoxon_z": 1.6705,
-      "p_permutation": 0.034397,
+      "p_permutation": 0.035296,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1622,7 +1622,7 @@
       "median_rank_of_members": 42809.0,
       "MRU": 0.913259,
       "wilcoxon_z": 1.4315,
-      "p_permutation": 0.177782,
+      "p_permutation": 0.172783,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1663,8 +1663,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 45816.0,
       "MRU": 0.977408,
-      "wilcoxon_z": 1.6537,
-      "p_permutation": 0.046495,
+      "wilcoxon_z": 1.6538,
+      "p_permutation": 0.046095,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1705,8 +1705,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 46747.0,
       "MRU": 0.997269,
-      "wilcoxon_z": 1.7225,
-      "p_permutation": 0.006799,
+      "wilcoxon_z": 1.7226,
+      "p_permutation": 0.005799,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1747,8 +1747,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 3606.0,
       "MRU": 0.076928,
-      "wilcoxon_z": -1.4656,
-      "p_permutation": 0.154985,
+      "wilcoxon_z": -1.4655,
+      "p_permutation": 0.153985,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1789,8 +1789,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 39800.0,
       "MRU": 0.849067,
-      "wilcoxon_z": 1.2091,
-      "p_permutation": 0.30237,
+      "wilcoxon_z": 1.2092,
+      "p_permutation": 0.30167,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1831,8 +1831,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 11191.0,
       "MRU": 0.238741,
-      "wilcoxon_z": -1.6116,
-      "p_permutation": 0.0006,
+      "wilcoxon_z": -1.6111,
+      "p_permutation": 0.0007,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1894,7 +1894,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.000686
+      "q_BH": 0.0008
     },
     {
       "signature": "hippo_dependent_down",
@@ -1911,8 +1911,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 36781.0,
       "MRU": 0.784661,
-      "wilcoxon_z": 0.3689,
-      "p_permutation": 0.0002,
+      "wilcoxon_z": 0.3694,
+      "p_permutation": 0.0001,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -1974,7 +1974,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.0004
+      "q_BH": 0.00016
     },
     {
       "signature": "hippo_dependent_down",
@@ -1991,8 +1991,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 10123.0,
       "MRU": 0.215957,
-      "wilcoxon_z": -2.0253,
-      "p_permutation": 0.0003,
+      "wilcoxon_z": -2.0248,
+      "p_permutation": 0.0001,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2054,7 +2054,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.00048
+      "q_BH": 0.00016
     },
     {
       "signature": "hippo_dependent_down",
@@ -2071,8 +2071,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 35227.0,
       "MRU": 0.751509,
-      "wilcoxon_z": 2.4294,
-      "p_permutation": 0.0012,
+      "wilcoxon_z": 2.4299,
+      "p_permutation": 0.002,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2134,7 +2134,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.0012
+      "q_BH": 0.002
     },
     {
       "signature": "hippo_dependent_up",
@@ -2151,7 +2151,7 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 11016.0,
       "MRU": 0.235008,
-      "wilcoxon_z": -0.5756,
+      "wilcoxon_z": -0.5753,
       "p_permutation": 0.010199,
       "n_permutations": 10000,
       "seed": 20261021,
@@ -2193,7 +2193,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.039731
+      "q_BH": 0.038397
     },
     {
       "signature": "hippo_dependent_up",
@@ -2210,7 +2210,7 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 38775.5,
       "MRU": 0.827211,
-      "wilcoxon_z": 2.0473,
+      "wilcoxon_z": 2.0476,
       "p_permutation": 0.0009,
       "n_permutations": 10000,
       "seed": 20261021,
@@ -2269,8 +2269,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 24967.0,
       "MRU": 0.532629,
-      "wilcoxon_z": -0.1016,
-      "p_permutation": 0.768423,
+      "wilcoxon_z": -0.1013,
+      "p_permutation": 0.768823,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2311,7 +2311,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.768423
+      "q_BH": 0.768823
     },
     {
       "signature": "hippo_dependent_up",
@@ -2328,8 +2328,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 12531.0,
       "MRU": 0.267328,
-      "wilcoxon_z": -0.2146,
-      "p_permutation": 0.027397,
+      "wilcoxon_z": -0.2143,
+      "p_permutation": 0.026997,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2370,7 +2370,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.054794
+      "q_BH": 0.053994
     },
     {
       "signature": "hippo_dependent_up",
@@ -2387,8 +2387,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 26269.5,
       "MRU": 0.560416,
-      "wilcoxon_z": 0.5306,
-      "p_permutation": 0.59704,
+      "wilcoxon_z": 0.5309,
+      "p_permutation": 0.59674,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2429,7 +2429,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.682331
+      "q_BH": 0.681989
     },
     {
       "signature": "hippo_dependent_down",
@@ -2446,7 +2446,7 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 7975.0,
       "MRU": 0.170133,
-      "wilcoxon_z": -3.5926,
+      "wilcoxon_z": -3.5921,
       "p_permutation": 0.0001,
       "n_permutations": 10000,
       "seed": 20261021,
@@ -2509,7 +2509,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.0004
+      "q_BH": 0.00016
     },
     {
       "signature": "hippo_dependent_down",
@@ -2526,7 +2526,7 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 9062.0,
       "MRU": 0.193323,
-      "wilcoxon_z": -2.332,
+      "wilcoxon_z": -2.3315,
       "p_permutation": 0.0001,
       "n_permutations": 10000,
       "seed": 20261021,
@@ -2589,7 +2589,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.0004
+      "q_BH": 0.00016
     },
     {
       "signature": "hippo_dependent_down",
@@ -2606,8 +2606,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 36627.0,
       "MRU": 0.781376,
-      "wilcoxon_z": 1.5479,
-      "p_permutation": 0.0002,
+      "wilcoxon_z": 1.5484,
+      "p_permutation": 0.0001,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2669,7 +2669,7 @@
         "Thbs3",
         "Trex1"
       ],
-      "q_BH": 0.0004
+      "q_BH": 0.00016
     },
     {
       "signature": "hippo_dependent_down",
@@ -2686,7 +2686,7 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 10823.0,
       "MRU": 0.230891,
-      "wilcoxon_z": -1.1932,
+      "wilcoxon_z": -1.1927,
       "p_permutation": 0.0004,
       "n_permutations": 10000,
       "seed": 20261021,
@@ -2766,8 +2766,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 13034.5,
       "MRU": 0.278069,
-      "wilcoxon_z": -0.4567,
-      "p_permutation": 0.038096,
+      "wilcoxon_z": -0.4564,
+      "p_permutation": 0.037696,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2808,7 +2808,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.060927
+      "q_BH": 0.060314
     },
     {
       "signature": "hippo_dependent_up",
@@ -2825,8 +2825,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 33542.0,
       "MRU": 0.715563,
-      "wilcoxon_z": 0.6546,
-      "p_permutation": 0.045695,
+      "wilcoxon_z": 0.6549,
+      "p_permutation": 0.046095,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2867,7 +2867,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.060927
+      "q_BH": 0.06146
     },
     {
       "signature": "hippo_dependent_up",
@@ -2884,8 +2884,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 11361.5,
       "MRU": 0.242379,
-      "wilcoxon_z": -1.6253,
-      "p_permutation": 0.014899,
+      "wilcoxon_z": -1.625,
+      "p_permutation": 0.014399,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2926,7 +2926,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.039731
+      "q_BH": 0.038397
     }
   ],
   "primary_endpoint": [
@@ -2945,8 +2945,8 @@
       "background_mean_rank": 23437.5,
       "median_rank_of_members": 26269.5,
       "MRU": 0.560416,
-      "wilcoxon_z": 0.5306,
-      "p_permutation": 0.59704,
+      "wilcoxon_z": 0.5309,
+      "p_permutation": 0.59674,
       "n_permutations": 10000,
       "seed": 20261021,
       "fisher_overlap": {
@@ -2987,7 +2987,7 @@
         "Ube2ql1",
         "Vipr1"
       ],
-      "q_BH": 0.682331
+      "q_BH": 0.681989
     }
   ],
   "primary_downgraded_due_to_mapping": []

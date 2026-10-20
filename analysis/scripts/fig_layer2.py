@@ -184,6 +184,49 @@ def build_data_cached():
     return _CACHE["data"]
 
 
+def fig5():
+    """Effect-size comparison: positive control vs stiffness signatures.
+
+    This is the pivotal figure. A pipeline that returns only nulls is
+    uninterpretable on its own; placing a known-true positive control on the
+    SAME axis shows the apparatus does detect real effects, so the stiffness
+    nulls reflect absence of signal rather than absence of sensitivity.
+    """
+    pc = json.load(open(os.path.join(L2, "layer2_positive_control.json"), encoding="utf-8"))
+    res = pc["results"]
+
+    labels = {
+        "POSITIVE_CONTROL_injury_up": "Positive control\n(nerve-injury genes)",
+        "stiffness_HD_up": "Stiffness HD_up\n(B-primary)",
+        "stiffness_HD_down": "Stiffness HD_down\n(B-secondary)",
+        "stiffness_HI_down": "Stiffness HI_down\n(exploratory)",
+    }
+    keys = [k for k in labels if k in res and "error" not in res[k]]
+    g = [abs(res[k]["hedges_g"]) for k in keys]
+    p = [res[k]["p_exact_permutation"] for k in keys]
+    n = [res[k]["n_present_after_filter"] for k in keys]
+
+    colors = ["#2F7D5B" if k.startswith("POSITIVE") else "#8C8C8C" for k in keys]
+
+    fig, ax = plt.subplots(figsize=(6.0, 3.5))
+    ypos = np.arange(len(keys))[::-1]
+    bars = ax.barh(ypos, g, color=colors, height=0.62)
+    ax.set_yticks(ypos)
+    ax.set_yticklabels([labels[k] for k in keys], fontsize=8)
+    for y, gi, pi, ni in zip(ypos, g, p, n):
+        ax.text(gi + 0.08, y, f"g={gi:.2f}, p={pi:.3f}, n={ni}",
+                va="center", fontsize=7.5, color="#303030")
+    ax.set_xlim(0, max(g) * 1.45)
+    ax.set_xlabel("|effect size| (Hedges g), saline arm SNI vs sham")
+    ax.set_title("Fig 5  Pipeline sensitivity: positive control vs stiffness signatures")
+    for s in ["top", "right"]:
+        ax.spines[s].set_visible(False)
+    p = os.path.join(FIG, "fig5_positive_control_vs_signatures.png")
+    fig.savefig(p)
+    plt.close(fig)
+    return p
+
+
 if __name__ == "__main__":
-    for f in (fig1, fig2, fig3, fig4):
+    for f in (fig1, fig2, fig3, fig4, fig5):
         print("wrote", f())

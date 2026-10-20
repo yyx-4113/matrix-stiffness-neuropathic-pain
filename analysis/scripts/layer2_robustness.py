@@ -67,6 +67,21 @@ def exact_p(a, b):
     return obs, float((np.abs(diffs) >= abs(obs) - 1e-12).mean()), len(diffs)
 
 
+def _matched_draw(member_bins, pool_by_bin, rng, max_retry=10):
+    """One gene per member, same expression decile, all genes distinct."""
+    used, draws = set(), []
+    for b in member_bins:
+        pool = pool_by_bin[b]
+        g = pool[rng.integers(0, len(pool))]
+        for _ in range(max_retry):
+            if g not in used:
+                break
+            g = pool[rng.integers(0, len(pool))]
+        used.add(g)
+        draws.append(g)
+    return draws
+
+
 def main():
     cfg = json.load(open(CFG, encoding="utf-8"))
     sig = json.load(open(os.path.join(L0, "layer0_signature.json"), encoding="utf-8"))
@@ -161,7 +176,10 @@ def main():
     n_ge = 0
     n_iter = 10000
     for _ in range(n_iter):
-        draws = [pool_by_bin[b][rng.integers(0, len(pool_by_bin[b]))] for b in member_bins]
+        # v0.4 R6: draw distinct genes (without replacement). Drawing with
+        # replacement lets one gene occupy several slots, which shrinks the
+        # effective module and inflates the variance of the random score.
+        draws = _matched_draw(member_bins, pool_by_bin, rng)
         sc = z.loc[draws].mean(axis=0)
         if abs(sc[sal_sni].mean() - sc[sal_sham].mean()) >= actual:
             n_ge += 1

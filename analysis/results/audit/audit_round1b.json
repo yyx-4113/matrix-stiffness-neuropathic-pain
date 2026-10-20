@@ -1,0 +1,60 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "audit": {
+    "per_signature": [
+      {
+        "signature": "hippo_dependent_up",
+        "n_human": 18,
+        "n_mapped_in_annotation": 18,
+        "mapping_rate": 1.0,
+        "n_after_expression_filter": 11,
+        "coverage_rate": 0.6111,
+        "lost_to_missing_annotation": [],
+        "lost_to_expression_filter": [
+          "Ankrd1",
+          "Ap1m2",
+          "Gprc5a",
+          "Hist1h4d",
+          "Krt18",
+          "Krt8",
+          "Vipr1"
+        ],
+        "governance_verdict": "MAPPING OK - coverage loss is a power issue, primary-endpoint status preserved"
+      },
+      {
+        "signature": "hippo_dependent_down",
+        "n_human": 41,
+        "n_mapped_in_annotation": 39,
+        "mapping_rate": 0.9512,
+        "n_after_expression_filter": 33,
+        "coverage_rate": 0.8049,
+        "lost_to_missing_annotation": [
+          "C1orf134",
+          "Dhrs12"
+        ],
+        "lost_to_expression_filter": [
+          "Ccdc78",
+          "Mapk15",
+          "Noxa1",
+          "Rab26",
+          "Tex22",
+          "Trex1"
+        ],
+        "governance_verdict": "MAPPING OK - coverage loss is a power issue, primary-endpoint status preserved"
+      },
+      {
+        "signature": "hippo_independent_down",
+        "n_human": 7,
+        "n_mapped_in_annotation": 7,
+        "mapping_rate": 1.0,
+        "n_after_expression_filter": 7,
+        "coverage_rate": 1.0,
+        "lost_to_missing_annotation": [],
+        "lost_to_expression_filter": [],
+        "governance_verdict": "MAPPING OK - coverage loss is a power issue, primary-endpoint status preserved"
+      }
+    ],
+    "_note": "The protocol's single mapping_rate number conflated cross-species homology mapping with post-filter coverage. They are reported separately here. The governance rule (section 4.3) applies to the homology mapping rate only; coverage loss is a power limitation to be declared in Limitations."
+  }
+}

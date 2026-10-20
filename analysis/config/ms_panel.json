@@ -1,8 +1,7 @@
 {
   "_tag": "ms-proto-frozen-2026-10-21",
   "_note": "FROZEN before any Layer-1 expression data were examined. Any change requires a changelog entry in PROTOCOL and a version bump.",
-  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
-
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
   "layer0": {
     "accession": "GSE98547",
     "organism": "Homo sapiens",
@@ -29,14 +28,19 @@
       "annotation": "gencode.v24lift37.annotation.gtf.gz",
       "annotation_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_24/GRCh37_mapping/gencode.v24lift37.annotation.gtf.gz",
       "key": "gene_id with version stripped",
-      "keep_gene_type": ["protein_coding"]
+      "keep_gene_type": [
+        "protein_coding"
+      ]
     },
     "signature_definition": {
       "test": "Welch two-sample t-test (stiff vs soft, within genotype)",
       "p_threshold": 0.05,
       "abs_log2fc_threshold": 0.5,
       "bh_corrected": false,
-      "direction_sets": ["stiffness_up", "stiffness_down"]
+      "direction_sets": [
+        "stiffness_up",
+        "stiffness_down"
+      ]
     },
     "hippo_stratification": {
       "_revised_v0_2": "R1 - sign-concordance requirement wrongly exiled genes whose response was COMPLETELY abolished by YAP/TAZ knockout (CTGF/CYR61/ANKRD1/AMOTL2 landed in ambiguous)",
@@ -59,41 +63,118 @@
       "secondary_confirmation_genotype": "LATSKO"
     },
     "canonical_yap_taz_targets": [
-      "CTGF", "CYR61", "ANKRD1", "AMOTL2",
-      "THBS1", "AXL", "CRIM1", "NUAK2"
+      "CTGF",
+      "CYR61",
+      "ANKRD1",
+      "AMOTL2",
+      "THBS1",
+      "AXL",
+      "CRIM1",
+      "NUAK2"
     ],
     "_canonical_note": "Minimal canonical set used only for sensitivity analysis S4. Curated from established YAP/TAZ direct-target reports; frozen a priori."
   },
-
   "layer1": {
     "accession": "GSE111216",
     "organism": "Mus musculus",
     "strain": "BALB/c",
-    "tissues": ["DRG", "SC", "BRN", "BLD"],
-    "models": ["CFA", "SNI"],
+    "tissues": [
+      "DRG",
+      "SC",
+      "BRN",
+      "BLD"
+    ],
+    "models": [
+      "CFA",
+      "SNI"
+    ],
     "n_per_group": 3,
     "endpoint_level": {
       "primary": [
-        {"tissue": "DRG", "model": "SNI", "signature": "HD_up"}
+        {
+          "tissue": "DRG",
+          "model": "SNI",
+          "signature": "HD_up"
+        }
       ],
       "secondary": [
-        {"tissue": "DRG", "model": "CFA", "signature": "HD_up"},
-        {"tissue": "SC", "model": "SNI", "signature": "HD_up"},
-        {"tissue": "SC", "model": "CFA", "signature": "HD_up"},
-        {"tissue": "DRG", "model": "SNI", "signature": "HD_down"},
-        {"tissue": "DRG", "model": "CFA", "signature": "HD_down"},
-        {"tissue": "SC", "model": "SNI", "signature": "HD_down"},
-        {"tissue": "SC", "model": "CFA", "signature": "HD_down"}
+        {
+          "tissue": "DRG",
+          "model": "CFA",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "SC",
+          "model": "SNI",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "SC",
+          "model": "CFA",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "DRG",
+          "model": "SNI",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "DRG",
+          "model": "CFA",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "SC",
+          "model": "SNI",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "SC",
+          "model": "CFA",
+          "signature": "HD_down"
+        }
       ],
       "negative_control": [
-        {"tissue": "BLD", "model": "CFA", "signature": "HD_up"},
-        {"tissue": "BLD", "model": "SNI", "signature": "HD_up"},
-        {"tissue": "BLD", "model": "CFA", "signature": "HD_down"},
-        {"tissue": "BLD", "model": "SNI", "signature": "HD_down"},
-        {"tissue": "BRN", "model": "CFA", "signature": "HD_up"},
-        {"tissue": "BRN", "model": "SNI", "signature": "HD_up"},
-        {"tissue": "BRN", "model": "CFA", "signature": "HD_down"},
-        {"tissue": "BRN", "model": "SNI", "signature": "HD_down"}
+        {
+          "tissue": "BLD",
+          "model": "CFA",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "BLD",
+          "model": "SNI",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "BLD",
+          "model": "CFA",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "BLD",
+          "model": "SNI",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "BRN",
+          "model": "CFA",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "BRN",
+          "model": "SNI",
+          "signature": "HD_up"
+        },
+        {
+          "tissue": "BRN",
+          "model": "CFA",
+          "signature": "HD_down"
+        },
+        {
+          "tissue": "BRN",
+          "model": "SNI",
+          "signature": "HD_down"
+        }
       ],
       "exploratory": [
         "all HI signature projections",
@@ -106,12 +187,18 @@
       "rule": "capitalize-only when symbol is all-uppercase and matches an entry in the mouse table; otherwise leave unchanged",
       "ambiguity_policy": "drop conflicting symbols into _UNMAPPED list; no guess-assignment",
       "min_acceptable_mapping_rate": 0.7,
-      "downgrade_if_below": "primary endpoint becomes exploratory"
+      "min_acceptable_coverage_rate": 0.5,
+      "_v0_4_note": "R7 - mapping and coverage are two different quantities and are governed separately. mapping_rate = fraction of signature members whose mouse orthologue symbol exists in the annotation (expression-filter independent): a MAPPING FAILURE. coverage_rate = fraction of signature members detected in the target expression matrix after its detection filter: a POWER / cell-type limitation. Only a mapping_rate breach downgrades a primary endpoint; a coverage shortfall is declared in Limitations.",
+      "downgrade_if_mapping_below": "primary endpoint becomes exploratory",
+      "declare_if_coverage_below": "power limitation stated in Limitations; effect estimate not interpreted"
     },
     "rank_test": {
       "primary_ranking_variable": "log2_fc",
       "alternative_ranking_variable": "log2_fcZ",
-      "statistic": ["Wilcoxon rank-sum z", "median_rank_difference_normalised (MRU)"],
+      "statistic": [
+        "Wilcoxon rank-sum z",
+        "median_rank_difference_normalised (MRU)"
+      ],
       "permutation": {
         "n_iterations": 10000,
         "scheme": "size-matched random gene subsample",
@@ -126,12 +213,31 @@
     },
     "overlap_test": {
       "method": "Fisher exact test on 2x2 table (signature membership x author DEG)",
-      "author_deg_thresholds": [0.05, 0.01]
+      "author_deg_thresholds": [
+        0.05,
+        0.01
+      ]
     },
     "floor_limited": {
       "rule": "both group mean expression values <= 1",
       "action": "flagged in gene-level table; retained in module rank test; removed in sensitivity S2"
     }
+  },
+  "positive_control": {
+    "_added_v0_4": "R9 - a pipeline that only ever yields null results cannot distinguish 'no signal' from 'cannot detect signal'. A pre-specified positive control establishes sensitivity.",
+    "_selection_basis": "Regeneration-associated genes (RAGs) and nerve-injury markers consistently reported as up-regulated in DRG neurons after peripheral nerve injury (SNI / axotomy). Selected from the literature ONLY - never from any expression result of this project, which would be circular.",
+    "_direction": "expected UP in SNI relative to sham",
+    "injury_up": [
+      "ATF3", "SPRR1A", "GAL", "NPY",
+      "SOX11", "GAP43", "NGFR", "VGF",
+      "STMN4", "BASP1", "MMP9", "TIMP1"
+    ],
+    "pass_criterion": {
+      "statistic": "exact permutation P on the saline-arm SNI-vs-sham score difference",
+      "pass_if": "P <= 0.05 AND difference > 0",
+      "also_report": "effect size (difference / pooled SD) for magnitude comparison against the stiffness signatures"
+    },
+    "on_failure": "All null conclusions are void. Do not report results from this pipeline; register the diagnosis in protocol v0.5 and declare the unvalidated sensitivity in Limitations."
   },
 
   "sensitivity_analyses": {

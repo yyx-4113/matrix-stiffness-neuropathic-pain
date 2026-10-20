@@ -1,0 +1,125 @@
+{
+  "_tag": "ms-proto-frozen-2026-10-21",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "audit": {
+    "A3_placeholder_symbols": {
+      "total_rows_across_files": 1448400,
+      "placeholder_rows": 0,
+      "n_placeholder_symbols": 0
+    },
+    "A2_biotype_ordering": {
+      "n_symbols": 58266,
+      "n_symbols_with_multiple_loci": 37,
+      "n_symbols_with_MIXED_biotypes": 37,
+      "n_mixed_symbols_retained_by_any_rule": 10,
+      "example_mixed": {
+        "SNORA40": [
+          "lincRNA",
+          "snoRNA"
+        ],
+        "PARGP1": [
+          "pseudogene",
+          "transcribed_unprocessed_pseudogene"
+        ],
+        "CTSLP2": [
+          "pseudogene",
+          "transcribed_unprocessed_pseudogene"
+        ],
+        "BMS1P4": [
+          "processed_transcript",
+          "transcribed_unprocessed_pseudogene"
+        ],
+        "OR52E1": [
+          "polymorphic_pseudogene",
+          "pseudogene"
+        ]
+      },
+      "median_fraction_of_signal_from_noncoding_loci": 0.4065,
+      "n_symbols_with_noncoding_fraction_gt_10pct": 4
+    },
+    "A1_mapping_rates": {
+      "protocol_min_acceptable_rate": 0.7,
+      "per_signature": {
+        "hippo_dependent_up": {
+          "n_human": 18,
+          "n_present": 18,
+          "mapping_rate": 1.0,
+          "breaches_protocol_floor": false
+        },
+        "hippo_dependent_down": {
+          "n_human": 41,
+          "n_present": 39,
+          "mapping_rate": 0.9512,
+          "breaches_protocol_floor": false
+        },
+        "hippo_independent_down": {
+          "n_human": 7,
+          "n_present": 7,
+          "mapping_rate": 1.0,
+          "breaches_protocol_floor": false
+        },
+        "reversed_up": {
+          "n_human": 1,
+          "n_present": 1,
+          "mapping_rate": 1.0,
+          "breaches_protocol_floor": false
+        },
+        "reversed_down": {
+          "n_human": 6,
+          "n_present": 6,
+          "mapping_rate": 1.0,
+          "breaches_protocol_floor": false
+        },
+        "ambiguous_up": {
+          "n_human": 1,
+          "n_present": 1,
+          "mapping_rate": 1.0,
+          "breaches_protocol_floor": false
+        },
+        "ambiguous_down": {
+          "n_human": 7,
+          "n_present": 6,
+          "mapping_rate": 0.8571,
+          "breaches_protocol_floor": false
+        }
+      },
+      "breaching_keys": []
+    },
+    "A4_rank_basis": {
+      "rank_construction": "np.arange(len(df)) -> 0-based ranks in [0, n-1]",
+      "expectation_used": "mu = m*(n+1)/2  (the 1-based formula)",
+      "correct_expectation_for_0_based": "mu = m*(n-1)/2",
+      "systematic_z_bias_units": 0.000766,
+      "verdict": "logic defect; numerical impact negligible at n~15k but must be fixed"
+    },
+    "A5_sampling": {
+      "scheme": "rng.integers(0, n, size=(n_iter, m)) -> WITH replacement",
+      "protocol_wording": "random gene SUBSET of the same size |S|",
+      "empirical_fraction_of_draws_containing_a_duplicate_gene": 0.0335,
+      "verdict": "should be without replacement; duplicate genes shrink the effective module size and widen the null"
+    },
+    "A6_endpoint_governance": {
+      "protocol_rule": "mapping_rate < 0.7 -> primary endpoint downgraded to exploratory",
+      "stage_B": {
+        "hippo_dependent_up": {
+          "declared_role": "B-primary",
+          "mapping_rate": 0.6111,
+          "must_downgrade_to_exploratory": true
+        },
+        "hippo_dependent_down": {
+          "declared_role": "B-secondary-1",
+          "mapping_rate": 0.8049,
+          "must_downgrade_to_exploratory": false
+        },
+        "hippo_independent_down": {
+          "declared_role": "exploratory",
+          "mapping_rate": 1.0,
+          "must_downgrade_to_exploratory": false
+        }
+      },
+      "violations": [
+        "hippo_dependent_up"
+      ]
+    }
+  }
+}

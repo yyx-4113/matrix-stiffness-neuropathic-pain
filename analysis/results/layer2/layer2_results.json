@@ -1,12 +1,25 @@
 {
   "_tag": "ms-proto-frozen-2026-10-21",
-  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.2",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
   "source": "GSE261676",
   "results": {
     "hippo_dependent_up": {
       "endpoint_role": "B-primary",
+      "endpoint_role_as_specified": "B-primary",
       "n_human_members": 18,
-      "n_mapped_present": 11,
+      "n_homology_mapped": 18,
+      "homology_mapping_rate": 1.0,
+      "n_present_after_filter": 11,
+      "coverage_rate": 0.6111,
+      "members_lost_to_expression_filter": [
+        "Ankrd1",
+        "Ap1m2",
+        "Gprc5a",
+        "Hist1h4d",
+        "Krt18",
+        "Krt8",
+        "Vipr1"
+      ],
       "members_present": [
         "Adap1",
         "Ajuba",
@@ -44,14 +57,26 @@
       },
       "negative_control_size_expression_matched": {
         "n_iterations": 2000,
-        "p_empirical": 0.681159,
+        "p_empirical": 0.683158,
         "note": "random size- and expression-decile-matched gene sets; a non-significant value confirms the scoring pipeline alone does not produce apparent effects"
       }
     },
     "hippo_dependent_down": {
       "endpoint_role": "B-secondary-1",
+      "endpoint_role_as_specified": "B-secondary-1",
       "n_human_members": 41,
-      "n_mapped_present": 33,
+      "n_homology_mapped": 39,
+      "homology_mapping_rate": 0.9512,
+      "n_present_after_filter": 33,
+      "coverage_rate": 0.8049,
+      "members_lost_to_expression_filter": [
+        "Ccdc78",
+        "Mapk15",
+        "Noxa1",
+        "Rab26",
+        "Tex22",
+        "Trex1"
+      ],
       "members_present": [
         "Abca7",
         "Abtb1",
@@ -111,14 +136,19 @@
       },
       "negative_control_size_expression_matched": {
         "n_iterations": 2000,
-        "p_empirical": 0.086957,
+        "p_empirical": 0.096452,
         "note": "random size- and expression-decile-matched gene sets; a non-significant value confirms the scoring pipeline alone does not produce apparent effects"
       }
     },
     "hippo_independent_down": {
       "endpoint_role": "exploratory",
+      "endpoint_role_as_specified": "exploratory",
       "n_human_members": 7,
-      "n_mapped_present": 7,
+      "n_homology_mapped": 7,
+      "homology_mapping_rate": 1.0,
+      "n_present_after_filter": 7,
+      "coverage_rate": 1.0,
+      "members_lost_to_expression_filter": [],
       "members_present": [
         "Chac1",
         "Crip2",

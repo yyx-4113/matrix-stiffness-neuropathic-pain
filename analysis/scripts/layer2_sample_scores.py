@@ -127,6 +127,7 @@ def exact_perm_diff(a, b, n_max=None):
 def main():
     cfg = json.load(open(CFG, encoding="utf-8"))
     sig = json.load(open(os.path.join(L0, "layer0_signature.json"), encoding="utf-8"))
+    min_rate = cfg["layer1"]["species_mapping"]["min_acceptable_mapping_rate"]
 
     print("[L2] building counts matrix ...")
     cmat, meta = build_counts()
@@ -141,12 +142,20 @@ def main():
     print(f"[L2] expression filter keeps {int(keep.sum())} / {cmat.shape[0]} genes")
     lg = np.log2(cpm[keep] + 1)
 
-    # ENSMUSG -> symbol
+    # ENSMUSG -> symbol.
+    # v0.4 R7 (audit finding A1): keep the pre-filter annotation universe so that
+    # homology MAPPING can be separated from post-filter COVERAGE. Collapsing the
+    # two into one "mapping_rate" made a coverage shortfall look like a mapping
+    # failure and wrongly invalidated the designated primary endpoint.
     smap = load_symbol_map()
+    annot_symbols = set(smap.get(g) for g in cmat.index)
+    annot_symbols.discard(None)
+    print(f"[L2] annotation universe: {len(annot_symbols)} mouse symbols")
+
     lg.index = [smap.get(g, None) for g in lg.index]
     lg = lg[lg.index.notnull()]
     lg = lg[~lg.index.duplicated(keep="first")]
-    print(f"[L2] {len(lg)} genes with a mouse symbol")
+    print(f"[L2] {len(lg)} genes with a mouse symbol after the CPM filter")
 
     # z-score every gene across all 16 samples (pre-specified: no group stratification)
     z = lg.sub(lg.mean(axis=1), axis=0).div(lg.std(axis=1, ddof=1), axis=0)
@@ -164,6 +173,15 @@ def main():
             print(f"[L2] {key}: only {len(present)} members present - skipped")
             continue
         score = z.loc[present].mean(axis=0)
+
+        # --- v0.4 R7: two distinct quantities ------------------------------
+        # homology_mapping_rate : did the human symbol find a mouse orthologue
+        #                         symbol in the annotation at all?
+        # coverage_rate         : is that orthologue actually detected in this
+        #                         DRG matrix after the CPM filter?
+        n_homology = sum(1 for m in members if m in annot_symbols)
+        homology_mapping_rate = n_homology / len(members)
+        coverage_rate = len(present) / len(members)
 
         for s in score.index:
             sample_rows.append({
@@ -212,16 +230,30 @@ def main():
         # ---- B-negative control: size- and expression-matched random sets -
         ctrl_p = _size_matched_control(z, present, score.index, meta, rng)
 
-        role = {
+        base_role = {
             "hippo_dependent_up": "B-primary",
             "hippo_dependent_down": "B-secondary-1",
             "hippo_independent_up": "exploratory",
             "hippo_independent_down": "exploratory",
         }[key]
+        # Protocol §4.3 governance attaches the downgrade to the HOMOLOGY
+        # mapping rate only. Coverage loss is a power limitation declared in
+        # Limitations, not a mapping failure.
+        if "primary" in base_role and homology_mapping_rate < min_rate:
+            role = f"exploratory (DOWNGRADED: homology mapping rate " \
+                   f"{homology_mapping_rate:.3f} < {min_rate})"
+        else:
+            role = base_role
         results[key] = {
             "endpoint_role": role,
+            "endpoint_role_as_specified": base_role,
             "n_human_members": len(sets.get(key, [])),
-            "n_mapped_present": len(present),
+            "n_homology_mapped": int(n_homology),
+            "homology_mapping_rate": round(homology_mapping_rate, 4),
+            "n_present_after_filter": len(present),
+            "coverage_rate": round(coverage_rate, 4),
+            "members_lost_to_expression_filter": sorted(
+                m for m in members if m in annot_symbols and m not in z.index),
             "members_present": sorted(present),
             "primary_saline_arm": {
                 "mean_score_SNI": round(float(score[sal_sni].mean()), 5),
@@ -261,7 +293,7 @@ def main():
     print("\n[L2] Stage B results (saline arm, SNI vs sham)")
     for k, v in results.items():
         p = v["primary_saline_arm"]
-        print(f"  {k:26s} n={v['n_mapped_present']:3d}  diff={p['difference']:+.4f}  "
+        print(f"  {k:26s} n={v['n_present_after_filter']:3d}  diff={p['difference']:+.4f}  "
               f"p_exact={p['p_exact_permutation']:.4f}  q={p['q_BH_family_of_4']:.4f}  "
               f"[welch p={p['welch_p']:.4f}]  role={v['endpoint_role']}")
 
@@ -278,6 +310,21 @@ def _perm_once(score, meta, rng):
     return d / 2
 
 
+def _matched_draw(member_bins, pool_by_bin, rng, max_retry=10):
+    """One gene per member, same expression decile, all genes distinct."""
+    used, draws = set(), []
+    for b in member_bins:
+        pool = pool_by_bin[b]
+        g = pool[rng.integers(0, len(pool))]
+        for _ in range(max_retry):
+            if g not in used:
+                break
+            g = pool[rng.integers(0, len(pool))]
+        used.add(g)
+        draws.append(g)
+    return draws
+
+
 def _size_matched_control(z, present, samples, meta, rng, n_iter=2000):
     """Negative control: random gene sets matched on size AND expression decile."""
     mean_expr = z.mean(axis=1)
@@ -289,17 +336,14 @@ def _size_matched_control(z, present, samples, meta, rng, n_iter=2000):
             if g in pool:
                 member_bins.append(b)
                 break
-    obs_fun = lambda vals: None
     sal_sni = [s for s in samples if meta.loc[s, "agent"] == "saline" and meta.loc[s, "group"] == "SNI"]
     sal_sham = [s for s in samples if meta.loc[s, "agent"] == "saline" and meta.loc[s, "group"] == "sham"]
     actual = abs(np.mean(z.loc[present][sal_sni].mean(axis=0).to_numpy())
                  - np.mean(z.loc[present][sal_sham].mean(axis=0).to_numpy()))
     n_ge = 0
     for _ in range(n_iter):
-        draws = []
-        for b in member_bins:
-            pool = pool_by_bin[b]
-            draws.append(pool[rng.integers(0, len(pool))])
+        # v0.4 R6: distinct genes (without replacement)
+        draws = _matched_draw(member_bins, pool_by_bin, rng)
         sc = z.loc[draws].mean(axis=0)
         d = abs(np.mean(sc[sal_sni].to_numpy()) - np.mean(sc[sal_sham].to_numpy()))
         if d >= actual:

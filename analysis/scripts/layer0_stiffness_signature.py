@@ -107,17 +107,29 @@ def bh_qvalues(p):
     return out
 
 
-def build_matrix():
-    """Read 24 per-sample cufflinks tables -> genes x samples FPKM matrix."""
+def build_matrix(gencode=None, bt_keep=None):
+    """Read 24 per-sample cufflinks tables -> genes x samples FPKM matrix.
+
+    v0.4 R4 (audit finding A2): the biotype filter must be applied at the
+    LOCUS level, BEFORE symbols are aggregated.
+
+    The previous version summed FPKM over all loci sharing a symbol first and
+    only then asked whether the symbol "had any protein-coding locus". That
+    ordering lets signal from a lncRNA / pseudogene / vault-RNA locus be added
+    into a retained protein-coding symbol, and it retains mixed-biotype symbols
+    on an any() vote. Audit measured 37 mixed-biotype symbols (10 retained),
+    with a median 40.6% of their summed signal coming from non-coding loci.
+    """
     if not os.path.isdir(RAW_DIR):
         sys.exit(f"missing raw directory: {RAW_DIR}")
     files = sorted(f for f in os.listdir(RAW_DIR) if FNAME_RE.match(f))
     if len(files) != 24:
         sys.exit(f"expected 24 sample files, found {len(files)}")
 
+    pre_filter = (gencode is not None and bt_keep is not None)
     series = {}
-    symbol_to_gids = {}
     dup_report = {}
+    sym_biotypes = {}
     for fn in files:
         m = FNAME_RE.match(fn)
         genotype_raw, stiffness, rep = m.group(2), int(m.group(3)), m.group(4)
@@ -130,20 +142,38 @@ def build_matrix():
             compression="gzip",
             dtype={"tracking_id": str, "gene_short_name": str, "FPKM": float},
         )
-        df["gene_short_name"] = df["gene_short_name"].str.strip()
-        before = len(df)
-        # same symbol annotated at >1 locus -> sum FPKM (conservative, keeps signal)
-        s = df.groupby("gene_short_name")["FPKM"].sum()
-        dup_report[label] = {"rows": int(before), "symbols": int(s.size)}
-        series[label] = s
-        # track which gene_ids back each symbol (needed for the biotype filter)
         df["gid"] = df["tracking_id"].str.split(".").str[0]
-        for sym, gid in zip(df["gene_short_name"], df["gid"]):
-            symbol_to_gids.setdefault(sym, set()).add(gid)
+        before = len(df)
+
+        # locus-level biotype filter, executed before any aggregation
+        if pre_filter:
+            df = df[df["gid"].map(gencode).isin(bt_keep)]
+
+        df["sym"] = df["gene_short_name"].fillna("").str.strip()
+        df = df[~df["sym"].isin(["", "-"])]
+
+        # record which biotypes survive per symbol, for the post-filter guard
+        for sym, gid in zip(df["sym"], df["gid"]):
+            sym_biotypes.setdefault(sym, set()).add(gencode.get(gid))
+
+        # remaining multi-locus symbols under the same symbol -> sum FPKM
+        s = df.groupby("sym")["FPKM"].sum()
+        dup_report[label] = {"rows": int(before),
+                             "loci_after_biotype_filter": int(len(df)),
+                             "symbols": int(s.size)}
+        series[label] = s
 
     mat = pd.DataFrame(series)
     mat = mat.sort_index()
-    return mat, dup_report, files, symbol_to_gids
+
+    # guard: with a locus-level filter, no symbol may retain >1 biotype
+    if pre_filter:
+        bad = [s for s in mat.index if len(sym_biotypes.get(s, ())) > 1]
+        if bad:
+            print(f"[L0] WARNING: mixed-biotype symbols survived: {bad[:5]}")
+        else:
+            print("[L0] guard OK: no mixed-biotype symbol survived the filter")
+    return mat, dup_report, files
 
 
 def _positive_control(tbl, targets):
@@ -183,33 +213,27 @@ def main():
         cfg = json.load(fh)
     l0 = cfg["layer0"]
 
-    print("[L0] building FPKM matrix ...")
-    mat, dup_report, files, symbol_to_gids = build_matrix()
-    n_genes_raw = mat.shape[0]
-    print(f"[L0] {n_genes_raw} symbols x {mat.shape[1]} samples")
-
-    # ---- biotype filter (v0.2 R2, annotation-driven) ---------------------
+    # ---- biotype filter (v0.2 R2, v0.4 R4) -----------------------------------
+    # R4: this is now applied at locus level INSIDE build_matrix(), i.e. BEFORE
+    # FPKM values are summed per symbol. Keeping it here as a separate step would
+    # re-introduce audit finding A2.
     bt = l0["biotype_filter"]
     gencode = load_gencode_biotype(bt["keep_gene_type"])
     keep_bt = bt["keep_gene_type"]
 
-    def symbol_is_kept(sym):
-        gids = symbol_to_gids.get(sym, ())
-        return any(gencode.get(g) in keep_bt for g in gids)
-
-    biotype_ok = pd.Series([symbol_is_kept(s) for s in mat.index], index=mat.index)
-    n_before_biotype = int(mat.shape[0])
+    print("[L0] building FPKM matrix (locus-level biotype filter applied first) ...")
+    mat, dup_report, files = build_matrix(gencode, keep_bt)
+    n_symbols = mat.shape[0]
+    print(f"[L0] {n_symbols} protein-coding symbols x {mat.shape[1]} samples")
 
     # ---- detection filter (frozen rule) ----------------------------------
     d = l0["detection_filter"]
     detected = (mat > d["min_fpkm"]).sum(axis=1)
     keep = detected >= d["min_samples"]
-    keep = keep & biotype_ok
     diagnostics = {
-        "input_symbols": int(n_genes_raw),
-        "biotype_filter_note": f"{bt['annotation']}; keep gene_type in {keep_bt}",
-        "symbols_before_biotype": n_before_biotype,
-        "symbols_passing_biotype": int(biotype_ok.sum()),
+        "biotype_filter_note": f"{bt['annotation']}; keep gene_type in {keep_bt} "
+                               f"(applied at locus level before symbol aggregation)",
+        "protein_coding_symbols": int(n_symbols),
         "detection_rule": f"FPKM > {d['min_fpkm']} in >= {d['min_samples']}/{d['of_total']} samples",
         "genes_passing": int(keep.sum()),
         "genes_dropped": int((~keep).sum()),
@@ -217,8 +241,7 @@ def main():
         "files": files,
     }
     mat = mat.loc[keep]
-    print(f"[L0] biotype filter keeps {int(biotype_ok.sum())} / {n_genes_raw} symbols")
-    print(f"[L0] + detection filter keeps {keep.sum()} / {n_genes_raw} symbols")
+    print(f"[L0] + detection filter keeps {keep.sum()} / {n_symbols} symbols")
 
     # ---- transform -------------------------------------------------------
     assert l0["transform"] == "log2(FPKM + 1)"
