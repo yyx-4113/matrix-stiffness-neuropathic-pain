@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-21T18:19:54Z",
-  "n_artifacts": 88,
+  "generated_utc": "2026-10-21T18:39:36Z",
+  "n_artifacts": 92,
   "n_raw_inputs": 42,
   "artifacts": {
     "analysis/config/ms_panel.json": {
@@ -252,7 +252,7 @@
       "bytes": 11516
     },
     "manuscript/cover_letter.docx": {
-      "sha256": "4af0e90c62b69d22433ff64532f9eccd30cfdc1434eaf0c2d0436fd977c3a35d",
+      "sha256": "d87804ad32fd0614dfbae932aa88f72743367fbeef62d90b851d9a744f0a95d9",
       "bytes": 38026
     },
     "manuscript/cover_letter.md": {
@@ -260,12 +260,12 @@
       "bytes": 2240
     },
     "manuscript/manuscript.docx": {
-      "sha256": "d96ac7c2ffea9507f972176e96166fd1bc61e5c2cc8300e8fca7f5d327ec78e0",
-      "bytes": 332017
+      "sha256": "776a791c9e77cdbb789cc2a97b3a5376fef87db7448279f0d225b4097703a81d",
+      "bytes": 331942
     },
     "manuscript/manuscript.md": {
-      "sha256": "8bdd7c95491f5f3a09d18c404535f7e4645242084d43adb56c4fe0425ab9001a",
-      "bytes": 33745
+      "sha256": "3c72fb2cbf6db2a9aaf459200b1acab08335e377c453ac9c1d25a7ad58674c55",
+      "bytes": 33608
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
@@ -338,6 +338,22 @@
     "manuscript/review/round3/_PANEL_BRIEF.md": {
       "sha256": "33748f9f40464a8429179b72ca12b710e29462c5fb4b6a8586a3e071c2f9834a",
       "bytes": 6695
+    },
+    "manuscript/review/round5_2026-10-22/A1_implementation.md": {
+      "sha256": "ee9819300a84c2edf788b1f138e337207a52302c2dcdcc25856f9586b964e874",
+      "bytes": 18015
+    },
+    "manuscript/review/round5_2026-10-22/A2_prose_fidelity.md": {
+      "sha256": "515e59e9174850b8b37d7e24c2776de8f3605b760a38e7343c2b101abbe2c005",
+      "bytes": 10120
+    },
+    "manuscript/review/round5_2026-10-22/A3_venue.md": {
+      "sha256": "21ce96565614133ed7fa783568258c871cf47133aab4c35d71f4f0c697219627",
+      "bytes": 9884
+    },
+    "manuscript/review/round5_2026-10-22/_PANEL_BRIEF.md": {
+      "sha256": "d61226706eb2c7dc26390b9bb39300def83adcb916d6e991812a9dc0df927841",
+      "bytes": 2590
     },
     "README.md": {
       "sha256": "01d94019d9eb10bd23e8b2fc226eb758f97488303dad12e36e6ee8de08813e7e",
