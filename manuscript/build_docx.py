@@ -170,8 +170,8 @@ def build_cover():
     P()
     add_formatted(doc.add_paragraph(),
         "Please consider our Research Article entitled \u201cA controlled stiffness signature does "
-        "not transfer to neuropathic-pain transcriptomes, while established ECM/mechanotransduction "
-        "gene sets show tissue-specific shifts\u201d for publication in PLOS ONE.")
+        "not transfer to neuropathic-pain transcriptomes: a sensitivity-validated null with "
+        "retained rank-projection specificity of matrisome/fibrosis gene sets\u201d for publication in PLOS ONE.")
     P()
     add_formatted(doc.add_paragraph(),
         "We report a prospectively specified, two-stage reanalysis asking whether a "
@@ -222,8 +222,8 @@ Public Library of Science
 Dear Editor,
 
 Please consider our Research Article entitled "A controlled stiffness signature does not transfer to
-neuropathic-pain transcriptomes, while established ECM/mechanotransduction gene sets show
-tissue-specific shifts" for publication in PLOS ONE.
+neuropathic-pain transcriptomes: a sensitivity-validated null with retained rank-projection
+specificity of matrisome/fibrosis gene sets" for publication in PLOS ONE.
 
 We report a prospectively specified, two-stage reanalysis asking whether a mechanically controlled
 (substrate-stiffness) transcriptional programme, derived from HEK293A (GSE98547), engages

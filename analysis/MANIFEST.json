@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-21T18:39:36Z",
-  "n_artifacts": 92,
+  "generated_utc": "2026-10-21T19:04:25Z",
+  "n_artifacts": 97,
   "n_raw_inputs": 42,
   "artifacts": {
     "analysis/config/ms_panel.json": {
@@ -32,8 +32,8 @@
       "bytes": 4790
     },
     "analysis/scripts/gate_consistency.py": {
-      "sha256": "2dbd06971e23fe33715dc1700357238cebdef0afd090529e7ad4e02c2d71ec5e",
-      "bytes": 16764
+      "sha256": "6d1893594695608aa49a082b4afb16c140c1f6d9e00ec4c1240f92d7cc01d30e",
+      "bytes": 16818
     },
     "analysis/scripts/gen_manifest.py": {
       "sha256": "d16e7f5a27f0a51ba4d847a7810f8c22eeaa825879196c157b1745ad08db2111",
@@ -248,24 +248,24 @@
       "bytes": 4067
     },
     "manuscript/build_docx.py": {
-      "sha256": "db39d6d0220c960b20b7ec6950e976868793f5748aad5806e31729cf9906fe9c",
-      "bytes": 11516
+      "sha256": "16624c5198b9f70f9e0adc90c150b545f47161feb0697a4ed928ffe75f17163f",
+      "bytes": 11562
     },
     "manuscript/cover_letter.docx": {
-      "sha256": "d87804ad32fd0614dfbae932aa88f72743367fbeef62d90b851d9a744f0a95d9",
-      "bytes": 38026
+      "sha256": "7b022c151c031dbf10a265bdabf393f27a43299bf7a5a597fa24e697d3033c99",
+      "bytes": 38039
     },
     "manuscript/cover_letter.md": {
-      "sha256": "749358fb43590d7e7f5cefb355fdcbcae487d5b96bf19bdfc8f5f936b908621e",
-      "bytes": 2240
+      "sha256": "e54f9f4f0f0f5b29d7f8bb0c510e12eebf4852f2aa712ab707d6200a42ef971b",
+      "bytes": 2263
     },
     "manuscript/manuscript.docx": {
-      "sha256": "776a791c9e77cdbb789cc2a97b3a5376fef87db7448279f0d225b4097703a81d",
-      "bytes": 331942
+      "sha256": "0c050fdb5935e03cca227718629fa5f604828a555f9a64ef873d39423a035284",
+      "bytes": 332322
     },
     "manuscript/manuscript.md": {
-      "sha256": "3c72fb2cbf6db2a9aaf459200b1acab08335e377c453ac9c1d25a7ad58674c55",
-      "bytes": 33608
+      "sha256": "d0a211c14912b44c3bb853145abc6c8e9756214e7d566fbdd745e723979e7e48",
+      "bytes": 35151
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
@@ -298,6 +298,10 @@
     "manuscript/review/REVIEW_round4_2026-10-21.md": {
       "sha256": "ad8349e9c11fe1c112157a7f11628b43de1768fb986c9985f052b76a5fb6bc6f",
       "bytes": 5375
+    },
+    "manuscript/review/REVIEW_round5_2026-10-22.md": {
+      "sha256": "e886a2f10e608babce8735d98e31c6e751d2f2a7bfa32f40aa08629cc24f7bb5",
+      "bytes": 6751
     },
     "manuscript/review/Round2_A1.md": {
       "sha256": "2bfdd3cc49b8d53b78f2926ee6a52c2fbd1b11a111b16677c4a9fc600d763e10",
@@ -355,6 +359,22 @@
       "sha256": "d61226706eb2c7dc26390b9bb39300def83adcb916d6e991812a9dc0df927841",
       "bytes": 2590
     },
+    "manuscript/review/round6_2026-10-22/B1_significance.md": {
+      "sha256": "4d7feae76c2a4b232c1a375bb39603b9b9052a486d16b58395d02a96b34af59b",
+      "bytes": 15671
+    },
+    "manuscript/review/round6_2026-10-22/B2_statistics.md": {
+      "sha256": "39809d5adf8d77ea01ee78fb9a6b755d06c82b452dbce1d62acd17c290aba145",
+      "bytes": 24984
+    },
+    "manuscript/review/round6_2026-10-22/B3_reproducibility.md": {
+      "sha256": "71126171a0a08bf736d25ac53432337ef1dcb90cb91bae34a325aee482c4ff4e",
+      "bytes": 24933
+    },
+    "manuscript/review/round6_2026-10-22/_PANEL_BRIEF.md": {
+      "sha256": "a865b09f59b3230a2ecbfcd65321214074347a3af86701a01e8ea367b036949d",
+      "bytes": 1038
+    },
     "README.md": {
       "sha256": "01d94019d9eb10bd23e8b2fc226eb758f97488303dad12e36e6ee8de08813e7e",
       "bytes": 9143
@@ -368,8 +388,8 @@
       "bytes": 1069
     },
     "PROTOCOL_基质刚度与神经病理性痛.md": {
-      "sha256": "9dcf9330f5f0d81383bb39e63095889983dc52a9718d48279482703ea8715657",
-      "bytes": 51332
+      "sha256": "bce7eb07a836120a917dec3d15ca51fc274586d5cb3cf78e0d039058fada906e",
+      "bytes": 51377
     }
   },
   "raw_inputs_not_packaged": {

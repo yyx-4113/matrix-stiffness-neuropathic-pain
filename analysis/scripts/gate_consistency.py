@@ -304,9 +304,10 @@ chk("R10 all 5 myelin markers detected in the matrix",
 # quietly reverts the double-null framing or drops a disclosed caveat, the gate
 # fails instead of silently shipping an over-claim.
 MANU = open(os.path.join(ROOT, "manuscript", "manuscript.md"), encoding="utf-8").read()
-chk("MS Stage A reframed as double-null (no residual 'uninformative')",
-    ("§5.3 not triggered (double null)" in MANU) and ("uninformative" not in MANU.lower()),
-    "see Stage A heading / Table 2 verdict")
+chk("MS Stage A framed as uninformative per §5.3 (protocol-faithful, not 'double-null')",
+    ("§5.3 triggered" in MANU) and ("uninformative" in MANU.lower())
+    and ("double null" not in MANU.lower()),
+    "see Stage A heading / Table 2 verdict / Discussion")
 chk("MS G1/G5 10-member overlap disclosed",
     ("G1 and G5 share 10 members" in MANU) or ("overlap by 10 members" in MANU),
     "see Layer 3 / Table 3 footnote")

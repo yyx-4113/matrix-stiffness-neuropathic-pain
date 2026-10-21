@@ -181,7 +181,7 @@ GSE98547 的设计允许一层通常做不到的分解——同一个刚度对�
 | M9 | 图（Fig 1–4）+ MANIFEST(SHA-256) + 一致性闸门 23/23 | 2026-10-21 01:20 | `analysis/MANIFEST.json`、`gate_consistency.py` |
 | M10 | **审核 Round 1**：逐行核码 + 从原始输入独立重算（发现 R4–R8） | 2026-10-21 01:32 | `results/audit/audit_round1.json`、`audit_round1b.json` |
 | M11 | **v0.4 修订重跑全链**（Layer 0 → Layer 1 → diag → Stage B → 稳健性） | 2026-10-21 01:41 | 各层 JSON 时间戳；签名不变（18/41） |
-| M12 | **阳性对照（§10）执行与判定：PASS**（diff=+1.285, g=+4.431） | 2026-10-21 01:36 | `layer2_positive_control.json` |
+| M12 | **阳性对照（§10）执行与判定：PASS**（diff=+1.285, g=+3.853；R13 由 Cohen's d 4.431 修正为 Hedges g） | 2026-10-21 01:36 | `layer2_positive_control.json` |
 | M13 | 图更新至 Fig 1–5；闸门扩至 **28/28**（含 4 项独立重算） | 2026-10-21 01:44 | `gate_consistency.py` 输出 |
 | M14 | **审核 Round 3**：19 项头条数字追溯 + 阳性对照无循环论证 | 2026-10-21 01:47 | `results/audit/audit_round3.json` |
 
