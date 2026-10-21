@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-21T11:29:58Z",
+  "generated_utc": "2026-10-21T11:49:46Z",
   "n_artifacts": 81,
   "n_raw_inputs": 42,
   "artifacts": {
@@ -252,7 +252,7 @@
       "bytes": 10223
     },
     "manuscript/cover_letter.docx": {
-      "sha256": "58116fdc144a669adce57ad73048090f922eae5686c4cb8a93ac2c679f440cc7",
+      "sha256": "dcf95747db4f5c162d60e7d5c7c21dc7aa1d294215402435a7b3aa2080d2f768",
       "bytes": 37915
     },
     "manuscript/cover_letter.md": {
@@ -260,12 +260,12 @@
       "bytes": 1393
     },
     "manuscript/manuscript.docx": {
-      "sha256": "7d15ac048eb608a1cef293b17e8cf8401b44a5932709744c93e3c070a8284143",
-      "bytes": 328257
+      "sha256": "b777ee9cbf9fc47e24620e9290528de4794657c848f9e1b23ee474a664974746",
+      "bytes": 328603
     },
     "manuscript/manuscript.md": {
-      "sha256": "0cabe44d6b1a6607f17b34c41d84d23dc25fa6c9a5697da80c170391e80143f9",
-      "bytes": 23093
+      "sha256": "e3ba89da1e458cb3eb482b2fe1f2b5a73edf2db010a07cffdc919597baf08854",
+      "bytes": 24473
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
