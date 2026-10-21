@@ -213,6 +213,92 @@ chk("RECOMPUTE homology mapping rate of HD_up (must clear the 0.7 floor)",
     recomputed_map >= CFG["layer1"]["species_mapping"]["min_acceptable_mapping_rate"],
     f"recomputed={recomputed_map:.4f}")
 
+# ------------------------------------------------------- Layer 3 (v0.5) ------
+def _load_table(path):
+    """Independent re-read of a deposited contrast table (gate must not trust
+    the pipeline's in-memory objects). De-duplication on SYMBOL before it
+    becomes the index is mandatory - see the R12 note in the protocol."""
+    import openpyxl
+
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb[wb.sheetnames[0]]
+    rows = ws.iter_rows(values_only=True)
+    header = [str(c).strip() if c is not None else "" for c in next(rows)]
+    df = pd.DataFrame([r for r in rows
+                       if r is not None and not all(v is None for v in r)],
+                      columns=header).rename(columns={"gene": "symbol"})
+    for c in ["value_CTR", "p_value", "log2_fc", "log2_fcZ", "pi_value"]:
+        if c in df.columns:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+    df["symbol"] = df["symbol"].astype(str).str.strip()
+    df = df.drop_duplicates(subset="symbol", keep="first")
+    return df.set_index("symbol")
+
+
+def _ranks_of(df, var):
+    order = np.argsort(df[var].to_numpy(), kind="mergesort")
+    arr = np.empty(len(df))
+    arr[order] = np.arange(len(df))
+    return pd.Series(arr, index=df.index)
+
+
+L3P = os.path.join(ROOT, "analysis", "results", "layer3", "layer3_generality.json")
+L3 = json.load(open(L3P, encoding="utf-8"))
+
+n_fail_l3 = sum(1 for v in L3["per_set_specificity"].values()
+                if v["specificity_failed"] is True)
+chk("L3 verdict is derived, not hard-coded: fail-count matches per-set flags",
+    n_fail_l3 == L3["n_sets_failing_specificity"],
+    (L3["n_sets_failing_specificity"], n_fail_l3))
+chk("L3 verdict is derived: PASS iff fail-count >= 4",
+    bool(L3["primary_endpoint_pass"]) == bool(n_fail_l3 >= 4),
+    (L3["primary_endpoint_pass"], n_fail_l3))
+chk("L3 tested all 5 pre-specified independent gene sets",
+    L3["n_sets_tested"] == 5, L3["n_sets_tested"])
+chk("L3 test family is 5 sets x 4 tissues x 2 models = 40",
+    L3["n_tests"] == 40, L3["n_tests"])
+l3t = pd.DataFrame(L3["table"])
+chk("L3 every set has a finite specificity index",
+    all(np.isfinite(v["SI"]) for v in L3["per_set_specificity"].values()),
+    [g for g, v in L3["per_set_specificity"].items() if not np.isfinite(v["SI"])])
+chk("L3 background is not degenerate (>1000 expressed genes in every contrast)",
+    bool((l3t["n_expressed_background"] > 1000).all()),
+    int(l3t["n_expressed_background"].min()))
+chk("L3 every set retains >=3 members in every contrast",
+    bool((l3t["n_mouse_present"] >= 3).all()),
+    int(l3t["n_mouse_present"].min()))
+chk("L3 BH q-values are within [0,1]",
+    bool(((l3t["q_matched_BH40"] >= 0) & (l3t["q_matched_BH40"] <= 1)).all()),
+    (float(l3t["q_matched_BH40"].min()), float(l3t["q_matched_BH40"].max())))
+
+# RECOMPUTE Layer-3 G2 (YAP/TAZ canonical targets) MRU in the DRG-SNI contrast
+# straight from the deposited xlsx, with no reliance on the pipeline's artefacts.
+_g2 = [g for g in CFG["layer3"]["gene_sets"]["G2_yap_taz_canonical_targets"]["members"]]
+_g2m = [(_h2m(g)) for g in _g2]
+_d3 = _load_table(os.path.join(ROOT, "analysis", "data", "raw",
+                              "GSE111216_Parisien_Suppl_Table_06_gene_DRG_CTRvsSNI.xlsx"))
+_e3 = _d3[_d3["value_CTR"] > 0]
+_e3 = _e3[np.isfinite(_e3["log2_fc"])]
+_r3 = _ranks_of(_e3, "log2_fc")
+_p3 = [g for g in _g2m if g in _e3.index]
+_mru3 = float(np.median(_r3.loc[_p3].to_numpy()) / (len(_e3) - 1))
+_row3 = l3t[(l3t.gene_set == "G2_yap_taz_canonical_targets")
+            & (l3t.tissue == "DRG") & (l3t.model == "SNI")]["MRU"].iloc[0]
+chk("RECOMPUTE Layer-3 G2 MRU (DRG-SNI) from deposited table",
+    abs(_mru3 - _row3) < 1e-6,
+    f"recomputed={_mru3:.6f} reported={_row3:.6f}")
+
+# ------------------------------------------------------- audit R10 (v0.5) ----
+TI_P = os.path.join(ROOT, "analysis", "results", "audit",
+                    "audit_tissue_identity.json")
+TI = json.load(open(TI_P, encoding="utf-8"))
+gap = float(TI["sensory_minus_myelin"])
+chk("R10 tissue-identity resolved by expression markers (sensory - myelin > 2 log2)",
+    bool(np.isfinite(gap)) and gap > 2.0, f"gap={gap:+.3f}")
+chk("R10 all 5 myelin markers detected in the matrix",
+    all(TI["markers_present"][g] for g in ["Mbp", "Plp1", "Mog", "Cnp", "Mag"]),
+    [g for g in ["Mbp", "Plp1", "Mog", "Cnp", "Mag"] if not TI["markers_present"][g]])
+
 # ---------------------------------------------------------------- report -----
 n_pass = sum(c["pass"] for c in checks)
 for c in checks:

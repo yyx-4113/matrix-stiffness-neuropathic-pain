@@ -1,0 +1,115 @@
+{
+  "protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.5",
+  "design": {
+    "data": "GSE261676 sample-level counts, saline arm 4 SNI vs 4 sham (primary); all 8 samples drug-adjusted (secondary)",
+    "test": "exact permutation over all C(8,4)=70 splits, two-sided",
+    "gene_sets": {
+      "G1_core_matrisome": 64,
+      "G2_yap_taz_canonical_targets": 15,
+      "G3_mechanosensing_adhesome": 22,
+      "G4_actin_rho_rock": 24,
+      "G5_ecm_remodelling_fibrosis": 23,
+      "HD_up": 18,
+      "POSITIVE_CONTROL_injury": 12
+    }
+  },
+  "conditions": {
+    "a_ecm_significant_up_ge3": false,
+    "b_HDup_not_significant": true,
+    "c_positive_control_pass": true
+  },
+  "verdict": "FAIL",
+  "table": [
+    {
+      "gene_set": "G1_core_matrisome",
+      "n_human_members": 64,
+      "n_mouse_present": 62,
+      "diff_saline_arm": 0.5127190559411512,
+      "p_exact_saline_arm": 0.22857142857142856,
+      "hedges_g_saline_arm": 0.8391606949522484,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 0.685412646072357,
+      "mean_SNI": 0.4904727330571196,
+      "mean_sham": -0.022246322884031583,
+      "q_BH_family_of_7": 0.44000000000000006
+    },
+    {
+      "gene_set": "G2_yap_taz_canonical_targets",
+      "n_human_members": 15,
+      "n_mouse_present": 12,
+      "diff_saline_arm": 0.17376522921897197,
+      "p_exact_saline_arm": 0.6571428571428571,
+      "hedges_g_saline_arm": 0.3095711382805271,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 0.5746254525013581,
+      "mean_SNI": 0.36988536452288806,
+      "mean_sham": 0.1961201353039161,
+      "q_BH_family_of_7": 0.7666666666666666
+    },
+    {
+      "gene_set": "G3_mechanosensing_adhesome",
+      "n_human_members": 22,
+      "n_mouse_present": 22,
+      "diff_saline_arm": -0.2768192440597794,
+      "p_exact_saline_arm": 0.2857142857142857,
+      "hedges_g_saline_arm": -0.8228312627251839,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": -0.016363536358644716,
+      "mean_SNI": 0.09213545434607283,
+      "mean_sham": 0.36895469840585227,
+      "q_BH_family_of_7": 0.44000000000000006
+    },
+    {
+      "gene_set": "G4_actin_rho_rock",
+      "n_human_members": 24,
+      "n_mouse_present": 20,
+      "diff_saline_arm": 0.3931098750618662,
+      "p_exact_saline_arm": 0.17142857142857143,
+      "hedges_g_saline_arm": 1.131331774321021,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 0.4232886197351681,
+      "mean_SNI": 0.09207189565747591,
+      "mean_sham": -0.30103797940439025,
+      "q_BH_family_of_7": 0.44000000000000006
+    },
+    {
+      "gene_set": "G5_ecm_remodelling_fibrosis",
+      "n_human_members": 23,
+      "n_mouse_present": 21,
+      "diff_saline_arm": 0.3712548335322626,
+      "p_exact_saline_arm": 0.3142857142857143,
+      "hedges_g_saline_arm": 0.7659226974615928,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 0.5683728315892138,
+      "mean_SNI": 0.4715698068033749,
+      "mean_sham": 0.10031497327111231,
+      "q_BH_family_of_7": 0.44000000000000006
+    },
+    {
+      "gene_set": "HD_up",
+      "n_human_members": 18,
+      "n_mouse_present": 11,
+      "diff_saline_arm": 0.1464492280549437,
+      "p_exact_saline_arm": 0.8,
+      "hedges_g_saline_arm": 0.21874170929711392,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 0.263017814730626,
+      "mean_SNI": 0.12244295931309768,
+      "mean_sham": -0.024006268741846033,
+      "q_BH_family_of_7": 0.8
+    },
+    {
+      "gene_set": "POSITIVE_CONTROL_injury",
+      "n_human_members": 12,
+      "n_mouse_present": 12,
+      "diff_saline_arm": 1.2853601977836577,
+      "p_exact_saline_arm": 0.02857142857142857,
+      "hedges_g_saline_arm": 3.8534506377956457,
+      "n_permutations_enumerated": 70,
+      "diff_all_samples_drug_adjusted": 1.2671574545215278,
+      "mean_SNI": 0.5089374791779254,
+      "mean_sham": -0.7764227186057322,
+      "q_BH_family_of_7": 0.19999999999999998
+    }
+  ]
+}

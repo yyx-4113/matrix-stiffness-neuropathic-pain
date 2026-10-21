@@ -19,6 +19,16 @@ INCLUDE_DIRS = [
     "analysis/config",
     "analysis/scripts",
     "analysis/results",
+    "manuscript",
+]
+
+# Top-level deliverable files (protocol, repo scaffolding, final manuscript)
+TOP_LEVEL_FILES = [
+    "README.md",
+    "CITATION.cff",
+    "LICENSE",
+    "PROTOCOL_基质刚度与神经病理性痛.md",
+    "manuscript/manuscript.md",
 ]
 # raw GEO inputs: hashed but never packaged (re-downloadable, tens of MB)
 RAW_GLOBS = [
@@ -65,6 +75,11 @@ def main():
         elif os.path.isdir(p):
             for rel, full in walk(pat):
                 raw[rel] = {"sha256": sha256(full), "bytes": os.path.getsize(full)}
+
+    for pat in TOP_LEVEL_FILES:
+        p = os.path.join(ROOT, pat)
+        if os.path.isfile(p):
+            files[pat] = {"sha256": sha256(p), "bytes": os.path.getsize(p)}
 
     out = {
         "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

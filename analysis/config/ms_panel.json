@@ -1,7 +1,7 @@
 {
   "_tag": "ms-proto-frozen-2026-10-21",
   "_note": "FROZEN before any Layer-1 expression data were examined. Any change requires a changelog entry in PROTOCOL and a version bump.",
-  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.5",
   "layer0": {
     "accession": "GSE98547",
     "organism": "Homo sapiens",
@@ -238,6 +238,126 @@
       "also_report": "effect size (difference / pooled SD) for magnitude comparison against the stiffness signatures"
     },
     "on_failure": "All null conclusions are void. Do not report results from this pipeline; register the diagnosis in protocol v0.5 and declare the unvalidated sensitivity in Limitations."
+  },
+
+  "layer3": {
+    "_added_v0_5": "A single-signature null result is one observation. To claim the artefact is a property of the METHOD rather than of this particular signature, independently published mechano/ECM gene sets must be run through the identical machinery and fail the same specificity test.",
+    "_frozen": "Written before any Layer-3 result was examined.",
+    "_selection_basis": "Each set was taken from a published, citable source defining ECM / mechanotransduction gene modules. Selection used NO expression result from any layer of this project. Sets were frozen before execution; membership may not be tuned afterwards.",
+    "_symbol_space": "Human HGNC symbols, mapped to mouse by the same frozen rule as the Layer-0 signature (§4.3).",
+    "_primary_purpose": "Test tissue SPECIFICITY, not activation: does each set shift more in the target pain tissue (DRG) than in a tissue that cannot plausibly host a stiffness programme (blood)?",
+    "target_contrast": {
+      "tissue": "DRG",
+      "model": "SNI"
+    },
+    "negative_contrast": {
+      "tissue": "BLD",
+      "model": "SNI"
+    },
+    "gene_sets": {
+      "G1_core_matrisome": {
+        "source": "Naba A, et al. Matrix Biol 2016 - core matrisome: collagens, proteoglycans, ECM glycoproteins",
+        "members": [
+          "COL1A1", "COL1A2", "COL3A1", "COL4A1", "COL4A2", "COL5A1", "COL5A2",
+          "COL6A1", "COL6A2", "COL6A3", "COL8A1", "COL11A1", "COL12A1", "COL14A1",
+          "COL15A1", "COL18A1", "BGN", "DCN", "LUM", "VCAN", "ACAN", "HSPG2", "GPC1",
+          "SDC1", "SDC4", "PRG4", "FMOD", "OGN", "ASPN", "FN1", "LAMA1", "LAMA2",
+          "LAMA4", "LAMB1", "LAMB2", "LAMC1", "NID1", "NID2", "TNC", "THBS1",
+          "THBS2", "SPARC", "POSTN", "TGFBI", "EMILIN1", "EMILIN2", "FBN1", "FBN2",
+          "LTBP2", "EFEMP1", "SERPINE1", "TIMP1", "TIMP2", "TIMP3", "LOX", "LOXL1",
+          "LOXL2", "SPP1", "ITGB1", "ITGB6", "VWF", "VIT", "AGRN", "HAPLN1"
+        ]
+      },
+      "G2_yap_taz_canonical_targets": {
+        "source": "Dupont S, et al. Nature 2011; Cordenonsi M, et al. Cell 2011; Zhao B, et al. Genes Dev 2008 - direct YAP/TAZ-TEAD targets",
+        "members": [
+          "CTGF", "CYR61", "ANKRD1", "AMOTL2", "THBS1", "AXL", "CRIM1", "NUAK2",
+          "LATS2", "DKK1", "MYOF", "TAGLN", "DIAPH3", "ITGB2", "F3"
+        ]
+      },
+      "G3_mechanosensing_adhesome": {
+        "source": "Coste B, et al. Science 2010; Ranade SS, et al. Nature 2014; Zaidel-Bar R, et al. J Cell Biol 2007 - mechanosensitive channels and the integrin adhesome",
+        "members": [
+          "PIEZO1", "PIEZO2", "TRPV4", "TRPA1", "TRPC1", "TRPC6", "KCNK2", "KCNK4",
+          "VCL", "TLN1", "TLN2", "ITGA1", "ITGA5", "ITGB1", "ITGB3", "PXN", "ZYX",
+          "SRC", "PTK2", "CAV1", "ACTN1", "FERMT2"
+        ]
+      },
+      "G4_actin_rho_rock": {
+        "source": "Ohashi K, et al. J Biochem 2017; Riento K & Ridley AJ, Nat Rev Mol Cell Biol 2003 - actin cytoskeleton and Rho-ROCK contractility",
+        "members": [
+          "ACTA2", "ACTB", "ACTG2", "MYL9", "MYL6", "MYH9", "MYH10", "RHOA", "RHOB",
+          "RHOC", "ROCK1", "ROCK2", "CDC42", "RAC1", "DIAPH1", "CFL1", "DES", "VIM",
+          "TAGLN", "CNN1", "CNN2", "MYOCD", "LIMK1", "LIMK2"
+        ]
+      },
+      "G5_ecm_remodelling_fibrosis": {
+        "source": "Wynn TA, J Pathol 2008; Henderson NC, et al. Nature 2020 - ECM remodelling and fibrotic effectors",
+        "members": [
+          "MMP2", "MMP9", "MMP14", "MMP13", "ADAMTS1", "ADAMTS4", "ADAMTS5",
+          "SERPINE1", "TIMP1", "TIMP2", "TIMP3", "LOX", "LOXL1", "LOXL2", "TGFB1",
+          "TGFB2", "TGFBR1", "TGFBR2", "CTGF", "ACTA2", "FN1", "COL1A1", "SPP1"
+        ]
+      }
+    },
+    "statistic": "MRU = median(rank of members) / (n_expressed - 1); ranks 1-based ascending by log2_fc; 0.5 = no shift",
+    "null": {
+      "scheme": "size-matched AND baseline-expression-decile-stratified random gene sets, drawn WITHOUT replacement",
+      "background": "expressed genes only (exclude zero/near-zero baseline loci)",
+      "n_iterations": 10000,
+      "seed": 20261021,
+      "p_formula": "(count(|perm - 0.5| >= |obs - 0.5|) + 1) / (n_iterations + 1)"
+    },
+    "specificity_index": {
+      "definition": "SI_g = |MRU(target) - 0.5| / |MRU(negative) - 0.5|",
+      "interpretation": "SI_g < 1 means the set shifts at least as far in blood as in DRG",
+      "fail_specificity_if": "SI_g < 1"
+    },
+    "primary_endpoint": {
+      "label": "L3-generality",
+      "rule": "The null-attribution is a property of the projection METHOD (not of one signature) if >= 4 of the 5 independent gene sets fail tissue specificity (SI_g < 1).",
+      "report": "count and per-set SI_g, plus per-set BH q over the 5 x 8 test family"
+    },
+    "secondary_endpoints": [
+      "number of the 40 tests (5 sets x 4 tissues x 2 models) surviving BH at 0.05",
+      "directional concordance of the 5 sets within each contrast",
+      "per-set effect size |MRU - 0.5| compared against its own matched null"
+    ]
+  },
+
+  "target_journals": {
+    "_verified": "Metrics verified online 2026-10-21. JIF = Journal Impact Factor (Web of Science / JCR), NOT CiteScore. SCIE status confirmed from publisher/aggregator listings.",
+    "_excluded": "PeerJ family excluded at user's instruction. Scientific Reports excluded: user's reanalysis/retrospective submissions are desk-rejected there repeatedly. PLOS ONE excluded: prior rejection on substantive methodological grounds.",
+    "primary": {
+      "name": "GigaScience",
+      "publisher": "Oxford University Press / GigaScience Press",
+      "issn": "2047-217X",
+      "jif_2025": 5.0,
+      "jcr_quartile": "Q1 (Computer Science Applications) - aggregator-reported, JCR not directly inspected",
+      "cas_zone": "Biology zone 2 (2025 upgrade) - aggregator-reported",
+      "scie": true,
+      "rationale": "Stated criteria are reproducibility, usability and utility; explicitly welcomes data reuse and reanalysis. Best fit for a cross-cohort methodological audit."
+    },
+    "alternates": [
+      {
+        "name": "BMC Bioinformatics",
+        "issn": "1471-2105",
+        "jif_2025": 4.4,
+        "jif_5yr_2025": 4.0,
+        "scie": true,
+        "source": "Publisher journal homepage (link.springer.com/journal/12859), 2025 metrics",
+        "note": "Scope explicitly covers statistical methods and models for analysis of biological data."
+      },
+      {
+        "name": "Molecular Pain",
+        "issn": "1744-8069",
+        "jif_2025": 3.8,
+        "jif_2024": 2.975,
+        "scie": true,
+        "source": "Aggregator listings, 2025 metrics",
+        "note": "Pain-domain readership; would require reframing the argument towards pain transcriptomics practice."
+      }
+    ]
   },
 
   "sensitivity_analyses": {

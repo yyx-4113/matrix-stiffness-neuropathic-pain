@@ -1,6 +1,6 @@
 {
   "_tag": "ms-proto-frozen-2026-10-21",
-  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.4",
+  "_protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.5",
   "source": "GSE261676",
   "specification": {
     "gene_set": [
@@ -56,7 +56,7 @@
       "n_permutations_enumerated": 70,
       "welch_p": 0.001331,
       "mann_whitney_p": 0.028571,
-      "hedges_g": 4.4315,
+      "hedges_g": 3.8535,
       "per_animal": {
         "DMI_sham1": -0.1607,
         "DMI_SNI4": 1.06157,
@@ -112,7 +112,7 @@
       "n_permutations_enumerated": 70,
       "welch_p": 0.740201,
       "mann_whitney_p": 1.0,
-      "hedges_g": 0.2516,
+      "hedges_g": 0.2187,
       "per_animal": {
         "DMI_sham1": -0.12386,
         "DMI_SNI4": 0.18528,
@@ -191,7 +191,7 @@
       "n_permutations_enumerated": 70,
       "welch_p": 0.010847,
       "mann_whitney_p": 0.028571,
-      "hedges_g": 3.0572,
+      "hedges_g": 2.6584,
       "per_animal": {
         "DMI_sham1": -0.23052,
         "DMI_SNI4": 0.16465,
@@ -235,7 +235,7 @@
       "n_permutations_enumerated": 70,
       "welch_p": 0.007968,
       "mann_whitney_p": 0.057143,
-      "hedges_g": 2.8122,
+      "hedges_g": 2.4454,
       "per_animal": {
         "DMI_sham1": 0.79043,
         "DMI_SNI4": 0.97629,
@@ -257,5 +257,5 @@
     }
   },
   "sensitivity_verdict": "PASS",
-  "sensitivity_detail": "diff=+1.2854, p_exact=0.0286, g=+4.431"
+  "sensitivity_detail": "diff=+1.2854, p_exact=0.0286, g=+3.853"
 }

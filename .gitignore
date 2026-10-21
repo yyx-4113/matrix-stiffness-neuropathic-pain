@@ -21,3 +21,6 @@ Thumbs.db
 
 # Release archives (regenerated, not tracked)
 release_*.zip
+
+# Project-internal memory / session data (not part of the public reproducibility package)
+.workbuddy/

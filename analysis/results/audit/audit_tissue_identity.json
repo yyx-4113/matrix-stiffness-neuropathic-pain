@@ -1,0 +1,220 @@
+{
+  "per_sample": {
+    "DMI_sham_GSM8148662": {
+      "gsm": "GSM8148662",
+      "agent": "DMI",
+      "group": "sham",
+      "myelin_score": 6.069177012861148,
+      "sensory_score": 9.144588853820242,
+      "cns_neuron_score": 8.28240103621547,
+      "astroglia_score": 2.253170487761995,
+      "satellite_score": 4.732477835421951
+    },
+    "DMI_SNI_GSM8148663": {
+      "gsm": "GSM8148663",
+      "agent": "DMI",
+      "group": "SNI",
+      "myelin_score": 6.451312200179386,
+      "sensory_score": 9.061352335419693,
+      "cns_neuron_score": 8.198500056742281,
+      "astroglia_score": 2.7435624555221163,
+      "satellite_score": 4.649601618886137
+    },
+    "DMI_sham_GSM8148664": {
+      "gsm": "GSM8148664",
+      "agent": "DMI",
+      "group": "sham",
+      "myelin_score": 6.487504270524243,
+      "sensory_score": 8.981342326308043,
+      "cns_neuron_score": 8.197657742878633,
+      "astroglia_score": 2.591247160095723,
+      "satellite_score": 4.747551397007886
+    },
+    "DMI_SNI_GSM8148665": {
+      "gsm": "GSM8148665",
+      "agent": "DMI",
+      "group": "SNI",
+      "myelin_score": 6.2607570306633376,
+      "sensory_score": 9.106270288507918,
+      "cns_neuron_score": 8.222285429816015,
+      "astroglia_score": 2.573342341759078,
+      "satellite_score": 4.602927324435869
+    },
+    "DMI_SNI_GSM8148666": {
+      "gsm": "GSM8148666",
+      "agent": "DMI",
+      "group": "SNI",
+      "myelin_score": 6.333265746688589,
+      "sensory_score": 9.106483448759692,
+      "cns_neuron_score": 8.171181455062214,
+      "astroglia_score": 2.5681923438881826,
+      "satellite_score": 4.694957050705366
+    },
+    "DMI_sham_GSM8148667": {
+      "gsm": "GSM8148667",
+      "agent": "DMI",
+      "group": "sham",
+      "myelin_score": 6.01809636159671,
+      "sensory_score": 9.05924576011411,
+      "cns_neuron_score": 8.340990265496771,
+      "astroglia_score": 2.4671542245112748,
+      "satellite_score": 4.520188625663189
+    },
+    "DMI_sham_GSM8148668": {
+      "gsm": "GSM8148668",
+      "agent": "DMI",
+      "group": "sham",
+      "myelin_score": 6.354610248009783,
+      "sensory_score": 9.135804245787645,
+      "cns_neuron_score": 8.294088778793094,
+      "astroglia_score": 2.306138246751846,
+      "satellite_score": 4.720231141546174
+    },
+    "DMI_SNI_GSM8148669": {
+      "gsm": "GSM8148669",
+      "agent": "DMI",
+      "group": "SNI",
+      "myelin_score": 6.270893450581065,
+      "sensory_score": 9.085184487367643,
+      "cns_neuron_score": 8.278393382714956,
+      "astroglia_score": 2.453055278749589,
+      "satellite_score": 4.663950439050859
+    },
+    "saline_sham_GSM8148670": {
+      "gsm": "GSM8148670",
+      "agent": "saline",
+      "group": "sham",
+      "myelin_score": 6.014501402637551,
+      "sensory_score": 8.90034978379625,
+      "cns_neuron_score": 8.35631504321425,
+      "astroglia_score": 2.8170969916996498,
+      "satellite_score": 4.373000603481296
+    },
+    "saline_SNI_GSM8148671": {
+      "gsm": "GSM8148671",
+      "agent": "saline",
+      "group": "SNI",
+      "myelin_score": 6.582651526269268,
+      "sensory_score": 9.006097568050947,
+      "cns_neuron_score": 8.20012911892444,
+      "astroglia_score": 3.1931481973600246,
+      "satellite_score": 4.527617169086472
+    },
+    "saline_sham_GSM8148672": {
+      "gsm": "GSM8148672",
+      "agent": "saline",
+      "group": "sham",
+      "myelin_score": 6.442135754490971,
+      "sensory_score": 9.008698732137256,
+      "cns_neuron_score": 8.302546995969488,
+      "astroglia_score": 2.9740619705131626,
+      "satellite_score": 4.5049561335174895
+    },
+    "saline_sham_GSM8148673": {
+      "gsm": "GSM8148673",
+      "agent": "saline",
+      "group": "sham",
+      "myelin_score": 6.261795935332449,
+      "sensory_score": 9.023180344582386,
+      "cns_neuron_score": 8.328002917341264,
+      "astroglia_score": 2.7147849553706327,
+      "satellite_score": 4.377653730887778
+    },
+    "saline_sham_GSM8148674": {
+      "gsm": "GSM8148674",
+      "agent": "saline",
+      "group": "sham",
+      "myelin_score": 6.153131967777581,
+      "sensory_score": 9.060269924068487,
+      "cns_neuron_score": 8.379908835035428,
+      "astroglia_score": 2.6157264182186535,
+      "satellite_score": 4.43318521761616
+    },
+    "saline_SNI_GSM8148675": {
+      "gsm": "GSM8148675",
+      "agent": "saline",
+      "group": "SNI",
+      "myelin_score": 6.507565119300928,
+      "sensory_score": 8.973298462948433,
+      "cns_neuron_score": 8.16088709588696,
+      "astroglia_score": 3.0955975368152906,
+      "satellite_score": 4.265576051001079
+    },
+    "saline_SNI_GSM8148676": {
+      "gsm": "GSM8148676",
+      "agent": "saline",
+      "group": "SNI",
+      "myelin_score": 6.279880158975585,
+      "sensory_score": 9.07647004676022,
+      "cns_neuron_score": 8.285222756836985,
+      "astroglia_score": 2.7884684581908434,
+      "satellite_score": 4.639978779428184
+    },
+    "saline_SNI_GSM8148677": {
+      "gsm": "GSM8148677",
+      "agent": "saline",
+      "group": "SNI",
+      "myelin_score": 6.435420165255292,
+      "sensory_score": 9.142213269354833,
+      "cns_neuron_score": 8.269315794506642,
+      "astroglia_score": 2.7916843269792886,
+      "satellite_score": 4.509841127924419
+    }
+  },
+  "panels": {
+    "myelin": [
+      "Mbp",
+      "Plp1",
+      "Mog",
+      "Cnp",
+      "Mag"
+    ],
+    "sensory": [
+      "Prph",
+      "Ntrk1",
+      "Scn10a",
+      "Calca",
+      "Tac1",
+      "Piezo2"
+    ],
+    "cns_neuron": [
+      "Snap25",
+      "Syt1",
+      "Rbfox3",
+      "Slc17a6"
+    ],
+    "astroglia": [
+      "Gfap",
+      "Aqp4",
+      "Slc1a2"
+    ],
+    "satellite": [
+      "Fabp7",
+      "Apoh"
+    ]
+  },
+  "markers_present": {
+    "Mbp": true,
+    "Plp1": true,
+    "Mog": true,
+    "Cnp": true,
+    "Mag": true,
+    "Prph": true,
+    "Ntrk1": true,
+    "Scn10a": true,
+    "Calca": true,
+    "Tac1": true,
+    "Piezo2": true,
+    "Snap25": true,
+    "Syt1": true,
+    "Rbfox3": true,
+    "Slc17a6": true,
+    "Gfap": true,
+    "Aqp4": true,
+    "Slc1a2": true,
+    "Fabp7": true,
+    "Apoh": true
+  },
+  "verdict": "DRG-like: sensory-neuron markers dominate while CNS myelin markers are near background -> paper label supported, GEO source_name appears to be a deposition error.",
+  "sensory_minus_myelin": 2.746759470414996
+}

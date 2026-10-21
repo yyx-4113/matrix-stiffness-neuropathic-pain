@@ -73,15 +73,24 @@ def exact_perm_diff(a, b):
 
 
 def hedges_g(a, b):
-    """Effect size: difference of means over pooled SD (Hedges g approximation)."""
+    """Bias-corrected standardised mean difference (Hedges g).
+
+    CORRECTED (audit R13): an earlier revision returned Cohen's d while naming
+    it Hedges g. At n1 = n2 = 4 the small-sample correction factor is
+        1 - 3 / (4 * (n1 + n2) - 9) = 1 - 3/23 = 0.8696,
+    so the uncorrected d overstated every effect by roughly 15%. The defect did
+    not change any sign or any P value, but it did inflate the headline
+    magnitude comparison (positive control 4.431 vs HD_up 0.252), so it is fixed here
+    and the corrected values are carried into every downstream artefact.
+    """
     a = np.asarray(a, float)
     b = np.asarray(b, float)
     n1, n2 = len(a), len(b)
     s = np.sqrt(((n1 - 1) * np.var(a, ddof=1) + (n2 - 1) * np.var(b, ddof=1))
                 / (n1 + n2 - 2))
-    if s == 0:
+    if s == 0 or not np.isfinite(s):
         return float("nan")
-    return float((np.mean(a) - np.mean(b)) / s)
+    return float((np.mean(a) - np.mean(b)) / s) * (1 - 3 / (4 * (n1 + n2) - 9))
 
 
 def build_z():

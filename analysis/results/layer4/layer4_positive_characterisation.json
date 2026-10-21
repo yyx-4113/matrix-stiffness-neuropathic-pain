@@ -1,0 +1,85 @@
+{
+  "protocol": "PROTOCOL_基质刚度与神经病理性痛.md v0.5",
+  "design": {
+    "data": "GSE261676 sample-level counts, saline arm (4 SNI vs 4 sham)",
+    "test": "per-gene Welch t-test, BH over all detection-filtered genes",
+    "primary_threshold": "q < 0.05",
+    "exploratory_threshold": "q < 0.10 (reported separately, never promoted)",
+    "seed": 20261021
+  },
+  "n_genes_tested": 15345,
+  "n_sig_up_q05": 8,
+  "n_sig_up_q10": 561,
+  "n_sig_dn_q05": 3,
+  "ecm_union": {
+    "n_members": 133,
+    "n_present": 123,
+    "n_sig_up_q05": 0,
+    "fisher_OR": 0.0,
+    "fisher_P": 1.0,
+    "sig_up_genes": []
+  },
+  "per_set": {
+    "G1_core_matrisome": {
+      "n_members": 64,
+      "n_present": 62,
+      "n_sig_up_q05": 0,
+      "n_sig_dn_q05": 0,
+      "median_log2_fc": 0.1358554100203504,
+      "median_hedges_g": 0.6361270906412921,
+      "sig_up_genes_q05": []
+    },
+    "G2_yap_taz_canonical_targets": {
+      "n_members": 15,
+      "n_present": 12,
+      "n_sig_up_q05": 0,
+      "n_sig_dn_q05": 0,
+      "median_log2_fc": 0.09218372723699253,
+      "median_hedges_g": 0.35230862274024616,
+      "sig_up_genes_q05": []
+    },
+    "G3_mechanosensing_adhesome": {
+      "n_members": 22,
+      "n_present": 22,
+      "n_sig_up_q05": 0,
+      "n_sig_dn_q05": 0,
+      "median_log2_fc": -0.047797820305845784,
+      "median_hedges_g": -0.3083208526721954,
+      "sig_up_genes_q05": []
+    },
+    "G4_actin_rho_rock": {
+      "n_members": 24,
+      "n_present": 20,
+      "n_sig_up_q05": 0,
+      "n_sig_dn_q05": 0,
+      "median_log2_fc": 0.054626376963481604,
+      "median_hedges_g": 0.6872257879557389,
+      "sig_up_genes_q05": []
+    },
+    "G5_ecm_remodelling_fibrosis": {
+      "n_members": 23,
+      "n_present": 21,
+      "n_sig_up_q05": 0,
+      "n_sig_dn_q05": 0,
+      "median_log2_fc": 0.10335309602222686,
+      "median_hedges_g": 0.4980129559967583,
+      "sig_up_genes_q05": []
+    }
+  },
+  "hd_up_members": {
+    "n_present": 11,
+    "n_sig_up_q05": 0,
+    "sig_up_genes": []
+  },
+  "positive_control": {
+    "n_present": 12,
+    "n_sig_up_q05": 0,
+    "sig_up_genes": []
+  },
+  "conditions": {
+    "a_ecm_up_ge10": false,
+    "b_fisher_enrichment": false,
+    "c_HDup_up_le2": true
+  },
+  "verdict": "FAIL"
+}

@@ -58,11 +58,11 @@ def fig1():
     ax.set_xticklabels(["sham\nsaline", "SNI\nsaline", "sham\nDMI", "SNI\nDMI"])
     ax.axhline(0, color="gray", lw=0.7, ls=":")
     ax.set_ylabel("HD_down module score (z)")
-    ax.set_title("Fig 1  Stiffness-down Hippo-dependent module score, per animal")
+    ax.set_title("Fig 2  Stiffness-down Hippo-dependent module score, per animal")
     ax.legend(frameon=False, title="group", fontsize=8, title_fontsize=8, loc="upper left")
     for s in ["top", "right"]:
         ax.spines[s].set_visible(False)
-    p = os.path.join(FIG, "fig1_per_animal_scores.png")
+    p = os.path.join(FIG, "fig2_per_animal_scores.png")
     fig.savefig(p)
     plt.close(fig)
     return p
@@ -86,10 +86,10 @@ def fig2():
     ax.set_yticklabels(per.index, fontsize=7.5)
     ax.axvline(0, color="black", lw=0.8)
     ax.set_xlabel("mean z difference (SNI - sham), saline arm")
-    ax.set_title("Fig 2  Per-member contribution to the HD_down signal")
+    ax.set_title("Fig 3  Per-member contribution to the HD_down signal")
     for s in ["top", "right"]:
         ax.spines[s].set_visible(False)
-    p = os.path.join(FIG, "fig2_member_contributions.png")
+    p = os.path.join(FIG, "fig3_member_contributions.png")
     fig.savefig(p)
     plt.close(fig)
     return p
@@ -113,10 +113,10 @@ def fig3():
     ax.set_xlim(lims); ax.set_ylim(lims)
     ax.set_xlabel("stiffness response in WT, log2FC (40 kPa - 1 kPa)")
     ax.set_ylabel("same response in YAP/TAZ-dKO")
-    ax.set_title("Fig 3  Signature derivation: Hippo-dependent members\n(shaded cone = |response| retains <= 50%)")
+    ax.set_title("Fig 1  Signature derivation: Hippo-dependent members\n(shaded cone = |response| retains <= 50%)")
     for s in ["top", "right"]:
         ax.spines[s].set_visible(False)
-    p = os.path.join(FIG, "fig3_signature_derivation.png")
+    p = os.path.join(FIG, "fig1_signature_derivation.png")
     fig.savefig(p)
     plt.close(fig)
     return p
