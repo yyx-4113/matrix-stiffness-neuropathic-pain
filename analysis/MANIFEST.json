@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-21T14:48:26Z",
+  "generated_utc": "2026-10-21T18:19:54Z",
   "n_artifacts": 88,
   "n_raw_inputs": 42,
   "artifacts": {
@@ -195,10 +195,6 @@
       "sha256": "882247bb50ab0946c68a561bc07ed9a53f1c6d1378e500f89e9a678b7906d97e",
       "bytes": 45413
     },
-    "analysis/results/layer2/fig/fig2_member_contributions.png": {
-      "sha256": "f8bf37cf2c8e217f45e4d2db9032dc0ec782b18c4bfdca9df973588fcdcdd53c",
-      "bytes": 49036
-    },
     "analysis/results/layer2/fig/fig2_per_animal_scores.png": {
       "sha256": "b478af0c2e60b87a8d160fe36794237db4670b4f6f60ecd386a21de1ca066d08",
       "bytes": 35554
@@ -252,24 +248,24 @@
       "bytes": 4067
     },
     "manuscript/build_docx.py": {
-      "sha256": "69e997579a7c77ddcfe2418834904258b6803a023a7f4945d99c5bc24b198c30",
-      "bytes": 11473
+      "sha256": "db39d6d0220c960b20b7ec6950e976868793f5748aad5806e31729cf9906fe9c",
+      "bytes": 11516
     },
     "manuscript/cover_letter.docx": {
-      "sha256": "29b607e8e4737b58ccd62230a65ac2713c2a4767403b4b3659047e469650fa9c",
-      "bytes": 38014
+      "sha256": "4af0e90c62b69d22433ff64532f9eccd30cfdc1434eaf0c2d0436fd977c3a35d",
+      "bytes": 38026
     },
     "manuscript/cover_letter.md": {
-      "sha256": "bf0993cce18826eb9f90f8afaa579e1131d15f8fcb3aa436220d531764cded2e",
-      "bytes": 2218
+      "sha256": "749358fb43590d7e7f5cefb355fdcbcae487d5b96bf19bdfc8f5f936b908621e",
+      "bytes": 2240
     },
     "manuscript/manuscript.docx": {
-      "sha256": "5e998f2da754f39f4ac19967492e85345b78ddc3afd9f66fafb2df5e436d7c52",
-      "bytes": 332008
+      "sha256": "d96ac7c2ffea9507f972176e96166fd1bc61e5c2cc8300e8fca7f5d327ec78e0",
+      "bytes": 332017
     },
     "manuscript/manuscript.md": {
-      "sha256": "52bc44955594cf3c89ed44b1c17077315c868e2abb351a4556bce75bf2c6cb9c",
-      "bytes": 33771
+      "sha256": "8bdd7c95491f5f3a09d18c404535f7e4645242084d43adb56c4fe0425ab9001a",
+      "bytes": 33745
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
@@ -298,6 +294,10 @@
     "manuscript/review/REVIEW_round3_2026-10-21.md": {
       "sha256": "11f19afa9fa531ee22a835eb250c3010da4d8f2a986623a9ecc986342ba42e14",
       "bytes": 14891
+    },
+    "manuscript/review/REVIEW_round4_2026-10-21.md": {
+      "sha256": "ad8349e9c11fe1c112157a7f11628b43de1768fb986c9985f052b76a5fb6bc6f",
+      "bytes": 5375
     },
     "manuscript/review/Round2_A1.md": {
       "sha256": "2bfdd3cc49b8d53b78f2926ee6a52c2fbd1b11a111b16677c4a9fc600d763e10",
