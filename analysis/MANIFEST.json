@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-21T11:24:10Z",
-  "n_artifacts": 77,
+  "generated_utc": "2026-10-21T11:29:58Z",
+  "n_artifacts": 81,
   "n_raw_inputs": 42,
   "artifacts": {
     "analysis/config/ms_panel.json": {
@@ -247,9 +247,25 @@
       "sha256": "8e6dc34f33339a3a95ab11fc280f9a88215f2cf0276cc0bcfa3c382658024463",
       "bytes": 2326
     },
+    "manuscript/build_docx.py": {
+      "sha256": "39549e609512cec754a21fda629c551797678b5524bc6e986810a1aae951e1ab",
+      "bytes": 10223
+    },
+    "manuscript/cover_letter.docx": {
+      "sha256": "58116fdc144a669adce57ad73048090f922eae5686c4cb8a93ac2c679f440cc7",
+      "bytes": 37915
+    },
+    "manuscript/cover_letter.md": {
+      "sha256": "21fafc81c8d6666b02bfbd44c48f3cd4927fe27688919ea4b7034c9741456845",
+      "bytes": 1393
+    },
+    "manuscript/manuscript.docx": {
+      "sha256": "7d15ac048eb608a1cef293b17e8cf8401b44a5932709744c93e3c070a8284143",
+      "bytes": 328257
+    },
     "manuscript/manuscript.md": {
-      "sha256": "9dfb8c8e6efb87f2aed7c2d751411786d273e9a3474973a57369870b7d5682b6",
-      "bytes": 23077
+      "sha256": "0cabe44d6b1a6607f17b34c41d84d23dc25fa6c9a5697da80c170391e80143f9",
+      "bytes": 23093
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
@@ -296,12 +312,12 @@
       "bytes": 3777
     },
     "README.md": {
-      "sha256": "5d6fb7267fd587fa30443ffcf773e787fa90cd19b5ec5856c89f8bfb46efb4bf",
-      "bytes": 9101
+      "sha256": "b270a52b633c2e69e59f69bbf4a52e766ca43b087d95ef210bcfd1e1bb1be5ae",
+      "bytes": 9146
     },
     "CITATION.cff": {
-      "sha256": "5e77729f7a089eaf67cd051bde21fb47e09189d4fa87ecd0486ac66204e2c31c",
-      "bytes": 1631
+      "sha256": "7929fddc2296b5fb955cfbd344f6b6bfe41cbe6836ed34762c625210c59d545c",
+      "bytes": 1700
     },
     "LICENSE": {
       "sha256": "7b36f471cfb9e7c7c6611b00426888737e0cb9b845e48897d8ced9c1b15243f4",
