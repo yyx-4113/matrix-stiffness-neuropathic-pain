@@ -3,7 +3,7 @@
 """Build manuscript.docx and cover_letter.docx/.md from the project markdown.
 
 Times New Roman 12pt throughout, journal-style headings, embedded figures,
-rendered tables, and a GigaScience cover letter.
+rendered tables, and a PLOS ONE cover letter.
 """
 import os
 import re
@@ -162,16 +162,16 @@ def build_cover():
 
     P(today)
     P()
-    P("The Editor-in-Chief")
-    P("GigaScience")
-    P("Oxford Academic / GigaScience Press")
+    P("The Editor")
+    P("PLOS ONE")
+    P("Public Library of Science")
     P()
     P("Dear Editor,")
     P()
     add_formatted(doc.add_paragraph(),
         "Please consider our Research Article entitled \u201cA controlled stiffness signature does "
         "not transfer to neuropathic-pain transcriptomes, while established ECM gene sets retain "
-        "tissue specificity\u201d for publication in GigaScience.")
+        "tissue specificity\u201d for publication in PLOS ONE.")
     P()
     add_formatted(doc.add_paragraph(),
         "We report a prospectively specified, two-stage reanalysis testing whether a "
@@ -185,7 +185,7 @@ def build_cover():
         "mechanotransduction gene sets retain tissue specificity in pain transcriptomes (4/5 sets show "
         "stronger DRG-than-blood shift). The work is thus both a negative result (the projected "
         "signature fails) and a positive, methodology-driven correction to prior \u201cECM enrichment in "
-        "pain\u201d interpretations \u2014 a fit for GigaScience\u2019s readership, which values rigour, open "
+        "pain\u201d interpretations \u2014 a fit for PLOS ONE\u2019s readership, which values rigour, open "
         "data, and reusable analytical workflows.")
     P()
     add_formatted(doc.add_paragraph(),
@@ -209,25 +209,25 @@ def build_cover():
     print("wrote", out)
 
     # also emit a markdown cover letter for the record
-    md = f"""# Cover letter \u2014 GigaScience
+    md = f"""# Cover letter \u2014 PLOS ONE
 
 {today}
 
-The Editor-in-Chief
-GigaScience
-Oxford Academic / GigaScience Press
+The Editor
+PLOS ONE
+Public Library of Science
 
 Dear Editor,
 
 Please consider our Research Article entitled "A controlled stiffness signature does not transfer to
 neuropathic-pain transcriptomes, while established ECM gene sets retain tissue specificity" for
-publication in GigaScience.
+publication in PLOS ONE.
 
 [body: prospectively specified reanalysis; HEK293A-derived stiffness signature does not transfer to
 injured DRG (bounded, sensitivity-validated null); established ECM/mechanotransduction sets retain
 tissue specificity once baseline-expression confounding is controlled (4/5 DRG > blood). Methodology-
-driven correction to prior "ECM enrichment in pain" interpretations; fit for GigaScience's open-data,
-reusable-workflow readership.]
+driven correction to prior "ECM enrichment in pain" interpretations; fit for PLOS ONE's soundness-only
+criterion and its welcome of negative or null results and reanalysis.]
 
 We confirm the work is original, not published, and not under consideration elsewhere. Only de-identified
 public data were used (GSE98547, GSE111216, GSE261676); no IRB/ethics approval required. All code,

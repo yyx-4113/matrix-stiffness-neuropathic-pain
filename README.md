@@ -52,7 +52,7 @@ analysis/
   results/
     layer0/  layer1/  layer2/  layer3/  layer3b/  layer4/  audit/  # JSON + CSV + fig/
 manuscript/
-  manuscript.md                       # GigaScience Research Article (Vancouver, de-AI polished)
+  manuscript.md                       # PLOS ONE Research Article (Vancouver, de-AI polished)
   review/                             # independent 4-panel review (Round 1 + Round 2)
 ```
 

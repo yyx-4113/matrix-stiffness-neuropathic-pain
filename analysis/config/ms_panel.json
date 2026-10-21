@@ -326,19 +326,43 @@
   },
 
   "target_journals": {
-    "_verified": "Metrics verified online 2026-10-21. JIF = Journal Impact Factor (Web of Science / JCR), NOT CiteScore. SCIE status confirmed from publisher/aggregator listings.",
-    "_excluded": "PeerJ family excluded at user's instruction. Scientific Reports excluded: user's reanalysis/retrospective submissions are desk-rejected there repeatedly. PLOS ONE excluded: prior rejection on substantive methodological grounds.",
+    "_verified": "Metrics verified online 2026-10-21. JIF = Journal Impact Factor (Web of Science / JCR), NOT CiteScore. SCIE status confirmed from publisher/aggregator listings. Submission URLs tested live (login page self-identifies journal).",
+    "_excluded": "PeerJ family excluded at user's instruction. Scientific Reports excluded: user's reanalysis/retrospective submissions are desk-rejected there repeatedly.",
+    "_note_plosone": "PLOS ONE was previously listed as excluded based on an INTERNAL (non-desk) rejection of a DIFFERENT manuscript (the MR chronic-pain / cognition paper). That rejection does not transfer to this prospectively specified methods/reanalysis paper, which fits PLOS ONE's soundness-only criterion and its explicit welcome of negative/null results and reanalysis. Selected as primary 2026-10-21 after the GigaScience editorial-board crisis (2025: >60% of editorial board resigned; JIF 11.8 -> 3.9, -67%).",
     "primary": {
-      "name": "GigaScience",
-      "publisher": "Oxford University Press / GigaScience Press",
-      "issn": "2047-217X",
-      "jif_2025": 5.0,
-      "jcr_quartile": "Q1 (Computer Science Applications) - aggregator-reported, JCR not directly inspected",
-      "cas_zone": "Biology zone 2 (2025 upgrade) - aggregator-reported",
+      "name": "PLOS ONE",
+      "publisher": "Public Library of Science",
+      "issn": "1932-6203",
+      "jif_2025": 2.8,
+      "jcr_quartile": "Q2 (Multidisciplinary Sciences)",
+      "cas_zone": "Multidisciplinary Sciences zone 3 (2025)",
       "scie": true,
-      "rationale": "Stated criteria are reproducibility, usability and utility; explicitly welcomes data reuse and reanalysis. Best fit for a cross-cohort methodological audit."
+      "apc_usd": 2477,
+      "submission_url": "https://www.editorialmanager.com/pone/",
+      "rationale": "Soundness-only; explicitly welcomes negative/null results and reanalysis; stable, no active crisis; SCIE."
     },
     "alternates": [
+      {
+        "name": "BMC Genomics",
+        "issn": "1471-2164",
+        "jif_2025": 3.9,
+        "jif_5yr_2025": 4.4,
+        "scie": true,
+        "apc_usd": "BMC standard (~3000, verify live)",
+        "submission_url": "https://submission.springernature.com/new-submission/12864/3",
+        "note": "Higher IF than PLOS ONE; scope explicitly includes 'novel methods and techniques'. Candidate if higher IF desired."
+      },
+      {
+        "name": "GigaScience",
+        "issn": "2047-217X",
+        "jif_2025": 3.9,
+        "jcr_quartile": "Q1 (Multidisciplinary Sciences)",
+        "cas_zone": "Biology zone 2 (2025)",
+        "scie": true,
+        "scie_status": "currently indexed; future retention uncertain",
+        "submission_url": "https://www.editorialmanager.com/giga/default.aspx",
+        "rationale": "Was primary until 2026-10-21. Deprioritized due to 2025 editorial-board crisis (>60% resigned) and JIF crash 11.8 -> 3.9 (-67%)."
+      },
       {
         "name": "BMC Bioinformatics",
         "issn": "1471-2105",
