@@ -299,6 +299,23 @@ chk("R10 all 5 myelin markers detected in the matrix",
     all(TI["markers_present"][g] for g in ["Mbp", "Plp1", "Mog", "Cnp", "Mag"]),
     [g for g in ["Mbp", "Plp1", "Mog", "Cnp", "Mag"] if not TI["markers_present"][g]])
 
+# -------------------------------------------- manuscript reporting coherence --
+# These guards make the Round-3 reframing self-enforcing: if a later edit
+# quietly reverts the double-null framing or drops a disclosed caveat, the gate
+# fails instead of silently shipping an over-claim.
+MANU = open(os.path.join(ROOT, "manuscript", "manuscript.md"), encoding="utf-8").read()
+chk("MS Stage A reframed as double-null (no residual 'uninformative')",
+    ("§5.3 not triggered (double null)" in MANU) and ("uninformative" not in MANU.lower()),
+    "see Stage A heading / Table 2 verdict")
+chk("MS G1/G5 10-member overlap disclosed",
+    ("G1 and G5 share 10 members" in MANU) or ("overlap by 10 members" in MANU),
+    "see Layer 3 / Table 3 footnote")
+chk("MS G4 denominator artefact disclosed",
+    "denominator artefact" in MANU,
+    "see Table 3 footnote / Limitations")
+chk("MS Figure Legends section present for PLOS ONE compliance",
+    "## Figure Legends" in MANU, "see end of manuscript")
+
 # ---------------------------------------------------------------- report -----
 n_pass = sum(c["pass"] for c in checks)
 for c in checks:

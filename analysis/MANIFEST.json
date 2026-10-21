@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-21T13:00:27Z",
-  "n_artifacts": 82,
+  "generated_utc": "2026-10-21T14:19:15Z",
+  "n_artifacts": 88,
   "n_raw_inputs": 42,
   "artifacts": {
     "analysis/config/ms_panel.json": {
@@ -32,8 +32,8 @@
       "bytes": 4790
     },
     "analysis/scripts/gate_consistency.py": {
-      "sha256": "842721093d9ba360516a445a2abba398505a211b98cd4c8a73ce2a6b8f7fe75d",
-      "bytes": 15770
+      "sha256": "2dbd06971e23fe33715dc1700357238cebdef0afd090529e7ad4e02c2d71ec5e",
+      "bytes": 16764
     },
     "analysis/scripts/gen_manifest.py": {
       "sha256": "d16e7f5a27f0a51ba4d847a7810f8c22eeaa825879196c157b1745ad08db2111",
@@ -252,24 +252,24 @@
       "bytes": 4067
     },
     "manuscript/build_docx.py": {
-      "sha256": "d287fe04abbb44c385b9c2a238a3530ef418b806768230e96941fd638d0e58f0",
-      "bytes": 10454
+      "sha256": "69e997579a7c77ddcfe2418834904258b6803a023a7f4945d99c5bc24b198c30",
+      "bytes": 11473
     },
     "manuscript/cover_letter.docx": {
-      "sha256": "980a8be026a5293bf8fe3a0c6a20db488cac8479dbd197932a470b76f1069a7c",
-      "bytes": 37906
+      "sha256": "8013ae027aae220fd5bce9b077006f70cabd17d165353802821a9e07fcf22b49",
+      "bytes": 38014
     },
     "manuscript/cover_letter.md": {
-      "sha256": "d57ce9554a4e5f2dd331126b4e7a0c1cab519db159392c63274c0a79ecb3f1c0",
-      "bytes": 1406
+      "sha256": "bf0993cce18826eb9f90f8afaa579e1131d15f8fcb3aa436220d531764cded2e",
+      "bytes": 2218
     },
     "manuscript/manuscript.docx": {
-      "sha256": "74d0821c7164aaf6c02650a3ec2321943ec388f5ffa7520081f85a39a52bded8",
-      "bytes": 328423
+      "sha256": "a54f677dd1747be1f40bc1631e7cfb3335e0da3179cab4cda83b4a9126debe9f",
+      "bytes": 331707
     },
     "manuscript/manuscript.md": {
-      "sha256": "0a14080cdda1a5f65db06c57daa6adc7a22f22cc7b72a3bdfe31b638ae0276a8",
-      "bytes": 24052
+      "sha256": "ebb406b47ae25740034d1bb48e2bd7a25f3e35f2c5731e4e856b49b999b2e757",
+      "bytes": 33001
     },
     "manuscript/review/A1_domain.md": {
       "sha256": "a312b71eb878088e35c2b11e042a08f81788e04baac056524f34bc3880f2aa73",
@@ -295,6 +295,10 @@
       "sha256": "afc7e73b60a3609733c529bcef53e976e3db56133d210c6b1be0d4df73133d86",
       "bytes": 3784
     },
+    "manuscript/review/REVIEW_round3_2026-10-21.md": {
+      "sha256": "11f19afa9fa531ee22a835eb250c3010da4d8f2a986623a9ecc986342ba42e14",
+      "bytes": 14891
+    },
     "manuscript/review/Round2_A1.md": {
       "sha256": "2bfdd3cc49b8d53b78f2926ee6a52c2fbd1b11a111b16677c4a9fc600d763e10",
       "bytes": 7969
@@ -314,6 +318,26 @@
     "manuscript/review/_PANEL_BRIEF.md": {
       "sha256": "0384bb86a7d55235a1075f74fe5d73425e8bb7b15aa80e3cf09086c372403059",
       "bytes": 3777
+    },
+    "manuscript/review/round3/A1_domain.md": {
+      "sha256": "06521d517cd5cedc8ac4f82b0a7d07e8f08b7261aa45c577d4099d581d10ac16",
+      "bytes": 16295
+    },
+    "manuscript/review/round3/A2_design.md": {
+      "sha256": "b376641a95537a92b90c0d48fd55f057aa9863b6d4e47a4ef7f37a8e6f3b5e95",
+      "bytes": 23689
+    },
+    "manuscript/review/round3/A3_implementation.md": {
+      "sha256": "5cbf769a18408bdcb738ce4707d8c7bb6388d01564358ae192de28cc90584229",
+      "bytes": 21519
+    },
+    "manuscript/review/round3/A4_venue.md": {
+      "sha256": "c49c15d6094cbfd3e319401026f149cec13049a167425808fcf0e1669dfd246f",
+      "bytes": 20449
+    },
+    "manuscript/review/round3/_PANEL_BRIEF.md": {
+      "sha256": "33748f9f40464a8429179b72ca12b710e29462c5fb4b6a8586a3e071c2f9834a",
+      "bytes": 6695
     },
     "README.md": {
       "sha256": "01d94019d9eb10bd23e8b2fc226eb758f97488303dad12e36e6ee8de08813e7e",
